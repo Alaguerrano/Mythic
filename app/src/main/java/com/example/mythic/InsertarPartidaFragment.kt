@@ -13,11 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ListaPartidasFragment.newInstance] factory method to
+ * Use the [InsertarPartidaFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ListaPartidasFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class InsertarPartidaFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -25,7 +24,7 @@ class ListaPartidasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_partidas, container, false)
+        return inflater.inflate(R.layout.fragment_insertar_partida, container, false)
     }
 
 

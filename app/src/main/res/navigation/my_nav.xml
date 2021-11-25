@@ -9,5 +9,18 @@
         android:id="@+id/listaPartidasFragment"
         android:name="com.example.mythic.ListaPartidasFragment"
         android:label="fragment_lista_partidas"
-        tools:layout="@layout/fragment_lista_partidas" />
+        tools:layout="@layout/fragment_lista_partidas" >
+        <action
+            android:id="@+id/action_listaPartidasFragment_to_insertarPartidaFragment"
+            app:destination="@id/insertarPartidaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertarPartidaFragment"
+        android:name="com.example.mythic.InsertarPartidaFragment"
+        android:label="fragment_insertar_partida"
+        tools:layout="@layout/fragment_insertar_partida" >
+        <action
+            android:id="@+id/action_insertarPartidaFragment_to_listaPartidasFragment"
+            app:destination="@id/listaPartidasFragment" />
+    </fragment>
 </navigation>
