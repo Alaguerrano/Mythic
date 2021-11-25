@@ -12,11 +12,11 @@ abstract class PartidaBD : RoomDatabase() {
 
     companion object{
         @Volatile
-        val INSTANCIA : PartidaBD? = null
+        private var INSTANCIA : PartidaBD? = null
 
         fun obtenerBD(context : Context) : PartidaBD{
             val tempInstancia = INSTANCIA
-            if(tempInstancia =! null){
+            if(tempInstancia != null){
                 return tempInstancia
             }
             synchronized(this){
