@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fila_lista_partida.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_insertar_partida.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_lista_partidas.xml" value="0.33" />
         <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/layout/activity_main.xml" value="0.15896739130434784" />
-        <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_insertar_partida.xml" value="0.35999999219721035" />
+        <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_insertar_partida.xml" value="0.19636363210756924" />
         <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_lista_partidas.xml" value="0.15896739130434784" />
       </map>
     </option>

@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class PartidaViewModel (application: Application) : AndroidViewModel(application) {
 
-    private val todosDatosLeidos : LiveData<List<Partida>>
+    val todosDatosLeidos : LiveData<List<Partida>>
     private val repository : PartidaRepository
 
     init{
