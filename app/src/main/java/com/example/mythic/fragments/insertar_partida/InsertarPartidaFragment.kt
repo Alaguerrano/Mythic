@@ -34,9 +34,11 @@ class InsertarPartidaFragment : Fragment() {
     }
     private fun insertarDatos(){
         val nombre = nombre_et.text.toString()
-
+        val masterHumano = master_humano_sw.isChecked()
+        val multijugador = multijugador_sw.isChecked()
+        val motorDistintoMythic = motorDistintoMythic_sw.isChecked()
         if (comprobarCampos(nombre)){
-            val partida = Partida(0, nombre,false)
+            val partida = Partida(0, nombre,masterHumano, multijugador, motorDistintoMythic)
             mPartidaViewModel.insertarPartida(partida)
             Toast.makeText(requireContext(), "Partida creada", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_insertarPartidaFragment_to_listaPartidasFragment)

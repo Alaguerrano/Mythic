@@ -8,5 +8,7 @@ data class Partida(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val nombre : String,
-    val masterHumano : Boolean
+    val masterHumano : Boolean,
+    val multijugador : Boolean,
+    val motorDistintoMythic : Boolean
 )
