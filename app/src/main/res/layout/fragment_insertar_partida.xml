@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#FBFDFD"
     tools:context=".fragments.insertar_partida.InsertarPartidaFragment">
 
     <EditText
@@ -12,6 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:backgroundTint="#92E3ED"
         android:ems="10"
         android:hint="Nombre de la Partida"
         android:inputType="textPersonName"
@@ -28,11 +29,19 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+
         android:text="Crear partida"
-        app:layout_constraintStart_toEndOf="@id/nombre_et"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/master_humano_sw" />
+
+    <Switch
+        android:id="@+id/master_humano_sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="¿Master humano?"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>
