@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/listaPartidasFragment"
-        android:name="com.example.mythic.ListaPartidasFragment"
-        android:label="fragment_lista_partidas"
+        android:name="com.example.mythic.fragments.lista_partidas.ListaPartidasFragment"
+        android:label="Partidas de Mythic guardadas:"
         tools:layout="@layout/fragment_lista_partidas" >
         <action
             android:id="@+id/action_listaPartidasFragment_to_insertarPartidaFragment"
@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/insertarPartidaFragment"
-        android:name="com.example.mythic.InsertarPartidaFragment"
-        android:label="fragment_insertar_partida"
+        android:name="com.example.mythic.fragments.insertar_partida.InsertarPartidaFragment"
+        android:label="Crear nueva partida"
         tools:layout="@layout/fragment_insertar_partida" >
         <action
             android:id="@+id/action_insertarPartidaFragment_to_listaPartidasFragment"
