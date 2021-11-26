@@ -33,7 +33,7 @@ class ListaPartidasFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mPartidaViewModel = ViewModelProvider(this).get(PartidaViewModel::class.java)
-        mPartidaViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer {partida ->
+        mPartidaViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
             adapter.establecerDatos(partida)
         })
 

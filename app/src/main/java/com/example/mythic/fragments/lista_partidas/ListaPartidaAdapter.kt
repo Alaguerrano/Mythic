@@ -1,5 +1,6 @@
 package com.example.mythic.fragments.lista_partidas
 
+
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
@@ -29,8 +30,9 @@ class ListaPartidaAdapter: RecyclerView.Adapter<ListaPartidaAdapter.MiViewHolder
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     fun establecerDatos(partida: List<Partida>){
         this.partidasLista = partida
-        notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 }
