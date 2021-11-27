@@ -20,4 +20,7 @@ interface PartidaDao {
 
     @Query("SELECT * FROM partidas_tabla ORDER BY id ASC")
     fun leerTodosLosDatos(): LiveData<List<Partida>>
+
+    @Query("SELECT * FROM partidas_tabla WHERE nombre =:nombre")
+    fun obtenerPartidaPorNombre(nombre : String): LiveData<Partida>
 }

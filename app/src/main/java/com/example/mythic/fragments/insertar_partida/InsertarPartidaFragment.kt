@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mythic.R
+import com.example.mythic.data.PartidaDao
 import com.example.mythic.model.Partida
 import com.example.mythic.data.PartidaViewModel
 import kotlinx.android.synthetic.main.fragment_insertar_partida.*

@@ -9,5 +9,6 @@ class PartidaRepository(private val partidaDao: PartidaDao) {
 
     suspend fun insertarPartida (partida: Partida){
         partidaDao.insertarPartida(partida)
+
     }
 }
