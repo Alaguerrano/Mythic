@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.mythic.model.Partida
+import com.example.mythic.repository.PartidaRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,4 +25,6 @@ class PartidaViewModel (application: Application) : AndroidViewModel(application
             repository.insertarPartida(partida)
         }
     }
+
+
 }

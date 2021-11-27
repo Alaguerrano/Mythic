@@ -1,4 +1,4 @@
-package com.example.mythic.data
+package com.example.mythic.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

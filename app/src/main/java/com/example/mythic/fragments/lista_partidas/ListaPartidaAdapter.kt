@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
-import com.example.mythic.data.Partida
+import com.example.mythic.model.Partida
 import kotlinx.android.synthetic.main.fila_lista_partida.view.*
 
 class ListaPartidaAdapter: RecyclerView.Adapter<ListaPartidaAdapter.MiViewHolder>(){
