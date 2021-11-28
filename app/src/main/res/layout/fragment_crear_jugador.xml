@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:backgroundTint="#92E3ED"
         android:ems="10"
-        android:hint="Nombre de la Partida"
+        android:hint="Nombre del Jugador"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text=""

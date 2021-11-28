@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_actualizar_jugador.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
 
 
-class ActualizarPartidaFragment : Fragment() {
+class ActualizarJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
 

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listaJugadoresFragment"
         android:name="com.example.mythic.fragments.lista_jugadores.ListaJugadoresFragment"
-        android:label="Perfiles de Jugadores de Mythic guardados:"
+        android:label="Perfiles de Jugadores de Mythic:"
         tools:layout="@layout/fragment_lista_jugadores" >
         <action
             android:id="@+id/action_listaJugadoresFragment_to_crearJugadorFragment"

@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.mythic.R
+import com.example.mythic.R.id.action_listaJugadoresFragment_to_crearJugadorFragment
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
@@ -32,12 +34,13 @@ class ListaJugadoresFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+
         mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
             adapter.establecerDatos(partida)
         })
 
         view.floatingActionButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listaJugadoresFragment_to_crearJugadorFragment)
+            findNavController().navigate(action_listaJugadoresFragment_to_crearJugadorFragment)
         }
         return view
     }
