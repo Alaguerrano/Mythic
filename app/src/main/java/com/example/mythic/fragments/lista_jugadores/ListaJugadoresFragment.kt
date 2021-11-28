@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.lista_partidas
+package com.example.mythic.fragments.lista_jugadores
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,33 +11,33 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.mythic.R
-import com.example.mythic.viewmodel.PartidaViewModel
-import kotlinx.android.synthetic.main.fragment_lista_partidas.view.*
+import com.example.mythic.viewmodel.JugadorViewModel
+import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
 
-class ListaPartidasFragment : Fragment() {
+class ListaJugadoresFragment : Fragment() {
 
-    private lateinit var mPartidaViewModel : PartidaViewModel
+    private lateinit var mJugadorViewModel : JugadorViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_lista_partidas, container, false)
+        val view = inflater.inflate(R.layout.fragment_lista_jugadores, container, false)
 
-        val adapter = ListaPartidaAdapter()
+        val adapter = ListaJugadoresAdapter()
         val recyclerView = view.recyclerView
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        mPartidaViewModel = ViewModelProvider(this).get(PartidaViewModel::class.java)
-        mPartidaViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
+        mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+        mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
             adapter.establecerDatos(partida)
         })
 
         view.floatingActionButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listaPartidasFragment_to_insertarPartidaFragment)
+            findNavController().navigate(R.id.action_listaJugadoresFragment_to_crearJugadorFragment)
         }
         return view
     }

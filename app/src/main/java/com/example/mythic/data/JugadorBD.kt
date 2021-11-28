@@ -4,18 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.mythic.model.Partida
+import com.example.mythic.model.Jugador
 
-@Database(entities = [Partida::class], version = 1, exportSchema = false)
-abstract class PartidaBD : RoomDatabase() {
+@Database(entities = [Jugador::class], version = 1, exportSchema = false)
+abstract class JugadorBD : RoomDatabase() {
 
-    abstract fun partidaDao() : PartidaDao
+    abstract fun jugadorDao() : JugadorDao
 
     companion object{
         @Volatile
-        private var INSTANCIA : PartidaBD? = null
+        private var INSTANCIA : JugadorBD? = null
 
-        fun obtenerBD(context : Context) : PartidaBD{
+        fun obtenerBD(context : Context) : JugadorBD{
             val tempInstancia = INSTANCIA
             if(tempInstancia != null){
                 return tempInstancia
@@ -23,8 +23,8 @@ abstract class PartidaBD : RoomDatabase() {
             synchronized(this){
                 val instancia = Room.databaseBuilder(
                     context.applicationContext,
-                    PartidaBD::class.java,
-                    "partidas_tabla"
+                    JugadorBD::class.java,
+                    "jugadores_tabla"
                 ).build()
                 INSTANCIA = instancia
                 return instancia

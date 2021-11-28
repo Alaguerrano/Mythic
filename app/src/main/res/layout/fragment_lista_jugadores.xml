@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFF"
-    tools:context=".fragments.lista_partidas.ListaPartidasFragment">
+    tools:context=".fragments.lista_jugadores.ListaJugadoresFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
