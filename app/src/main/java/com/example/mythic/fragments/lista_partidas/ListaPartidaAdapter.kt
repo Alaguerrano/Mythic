@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
 import com.example.mythic.model.Partida
@@ -27,6 +28,10 @@ class ListaPartidaAdapter: RecyclerView.Adapter<ListaPartidaAdapter.MiViewHolder
     override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val partidaActual = partidasLista[position]
         holder.itemView.nombre_textView.text = partidaActual.nombre
+        holder.itemView.filaLayout.setOnClickListener{
+            val action = ListaPartidasFragmentDirections.actionListaPartidasFragmentToActualizarPartidaFragment(partidaActual)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
 

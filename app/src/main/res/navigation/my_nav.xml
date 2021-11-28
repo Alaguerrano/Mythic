@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listaPartidasFragment_to_insertarPartidaFragment"
             app:destination="@id/insertarPartidaFragment" />
+        <action
+            android:id="@+id/action_listaPartidasFragment_to_actualizarPartidaFragment"
+            app:destination="@id/actualizarPartidaFragment" />
     </fragment>
     <fragment
         android:id="@+id/insertarPartidaFragment"
@@ -22,5 +25,17 @@
         <action
             android:id="@+id/action_insertarPartidaFragment_to_listaPartidasFragment"
             app:destination="@id/listaPartidasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarPartidaFragment"
+        android:name="com.example.mythic.fragments.actualizar_partida.ActualizarPartidaFragment"
+        android:label="Partida seleccionada:"
+        tools:layout="@layout/fragment_actualizar_partida" >
+        <action
+            android:id="@+id/action_actualizarPartidaFragment_to_listaPartidasFragment"
+            app:destination="@id/listaPartidasFragment" />
+        <argument
+            android:name="partidaActual"
+            app:argType="com.example.mythic.model.Partida" />
     </fragment>
 </navigation>

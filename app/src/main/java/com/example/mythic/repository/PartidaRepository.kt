@@ -11,4 +11,9 @@ class PartidaRepository(private val partidaDao: PartidaDao) {
         partidaDao.insertarPartida(partida)
 
     }
+
+    suspend fun actualizarPartida (partida: Partida){
+        partidaDao.actualizarPartida(partida)
+    }
+
 }

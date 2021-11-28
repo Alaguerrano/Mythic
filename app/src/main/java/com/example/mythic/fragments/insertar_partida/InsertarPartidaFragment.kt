@@ -10,16 +10,15 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mythic.R
-import com.example.mythic.data.PartidaDao
 import com.example.mythic.model.Partida
-import com.example.mythic.data.PartidaViewModel
+import com.example.mythic.viewmodel.PartidaViewModel
 import kotlinx.android.synthetic.main.fragment_insertar_partida.*
 import kotlinx.android.synthetic.main.fragment_insertar_partida.view.*
 
 
 class InsertarPartidaFragment : Fragment() {
 
-    private lateinit var mPartidaViewModel : PartidaViewModel
+    private lateinit var mPartidaViewModel: PartidaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,32 +32,40 @@ class InsertarPartidaFragment : Fragment() {
         }
         return view
     }
-    private fun insertarDatos(){
+
+    private fun insertarDatos() {
         val nombre = nombre_et.text.toString()
         val masterHumano = master_humano_sw.isChecked()
         val multijugador = multijugador_sw.isChecked()
         val motorDistintoMythic = motorDistintoMythic_sw.isChecked()
-        if (comprobarCampos(nombre)){
-            if(comprobarNombre(nombre)) {
+        if (comprobarCampos(nombre)) {
+            if (comprobarNombre(nombre)) {
                 val partida = Partida(0, nombre, masterHumano, multijugador, motorDistintoMythic)
                 mPartidaViewModel.insertarPartida(partida)
                 Toast.makeText(requireContext(), "Partida creada", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_insertarPartidaFragment_to_listaPartidasFragment)
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Debes elegir otro nombre de partida",
+                    Toast.LENGTH_LONG
+                ).show()
             }
-            else{
-                Toast.makeText(requireContext(), "Debes elegir otro nombre de partida", Toast.LENGTH_LONG).show()
-            }
-        }else{
+        } else {
             Toast.makeText(requireContext(), "Rellena todos los campos", Toast.LENGTH_LONG).show()
         }
 
     }
+
     //Comprueba si todos los campos del formulario están llenos
-    private fun comprobarCampos(nombre : String) : Boolean{
+    private fun comprobarCampos(nombre: String): Boolean {
         return !(TextUtils.isEmpty(nombre))
     }
 
-    private fun comprobarNombre(nombre: String) : Boolean{
+    private fun comprobarNombre(nombre: String): Boolean {
+        //TODO implementar
         return true
+
     }
+
 }
