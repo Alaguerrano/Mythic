@@ -1,11 +1,10 @@
 package com.example.mythic.fragments.actualizar_partida
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -49,6 +48,8 @@ class ActualizarPartidaFragment : Fragment() {
         view.button.setOnClickListener {
             actualizarPartida()
         }
+
+        setHasOptionsMenu(true)
         return view
     }
 
@@ -71,6 +72,34 @@ class ActualizarPartidaFragment : Fragment() {
 
     private fun comprobarCampos(nombre: String): Boolean {
         return !(TextUtils.isEmpty(nombre))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.borrar_menu, menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.borrar_menu) {
+            borrarPartida()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun borrarPartida() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Si"){_,_ ->
+            mPartidaViewModel.borrarPartida(args.partidaActual)
+            Toast.makeText(requireContext(), "Partida borrada: ${args.partidaActual.nombre}", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_actualizarPartidaFragment_to_listaPartidasFragment)
+
+        }
+        builder.setNegativeButton("No"){
+         _, _  ->
+        }
+        builder.setTitle("Borrar ${args.partidaActual.nombre}")
+        builder.setMessage("¿Estás seguro que quieres borrar ${args.partidaActual.nombre} ?")
+        builder.create().show()
     }
 
 }

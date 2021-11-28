@@ -32,4 +32,10 @@ class PartidaViewModel (application: Application) : AndroidViewModel(application
             repository.actualizarPartida(partida)
         }
     }
+
+    fun borrarPartida (partida: Partida){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.borrarPartida(partida)
+        }
+    }
 }

@@ -16,4 +16,8 @@ class PartidaRepository(private val partidaDao: PartidaDao) {
         partidaDao.actualizarPartida(partida)
     }
 
+    suspend fun borrarPartida (partida: Partida){
+        partidaDao.borrarPartida(partida)
+    }
+
 }
