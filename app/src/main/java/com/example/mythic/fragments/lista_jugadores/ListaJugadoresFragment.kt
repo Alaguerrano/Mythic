@@ -36,6 +36,9 @@ class ListaJugadoresFragment : Fragment() {
             adapter.establecerDatos(partida)
         })
 
+        //********************************************************************
+        //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
+        //*********************************************************************
         view.floatingActionButton.setOnClickListener{
             findNavController().navigate(R.id.action_listaJugadoresFragment_to_crearJugadorFragment)
         }
