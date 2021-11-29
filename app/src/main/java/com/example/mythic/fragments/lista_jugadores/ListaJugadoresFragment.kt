@@ -43,9 +43,12 @@ class ListaJugadoresFragment : Fragment() {
             builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
             builder.create().show()
         }
-        mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
-            adapter.establecerDatos(partida)
-        })
+        else{
+            mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
+                adapter.establecerDatos(partida)
+            })
+        }
+
 
         //********************************************************************
         //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
