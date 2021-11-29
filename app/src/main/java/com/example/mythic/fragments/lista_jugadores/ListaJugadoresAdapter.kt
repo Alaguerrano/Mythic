@@ -28,6 +28,9 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
     override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val jugadorActual = jugadoresLista[position]
         holder.itemView.nombre_textView.text = jugadorActual.nombre
+
+
+        //Si pulso en un jugador para actualizarlo
         holder.itemView.filaLayout.setOnClickListener{
             val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToActualizarJugadorFragment(jugadorActual)
             holder.itemView.findNavController().navigate(action)

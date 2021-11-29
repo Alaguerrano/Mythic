@@ -1,4 +1,4 @@
-package com.example.mythic.data
+package com.example.mythic.data.jugador
 
 import android.content.Context
 import androidx.room.Database
@@ -15,7 +15,7 @@ abstract class JugadorBD : RoomDatabase() {
         @Volatile
         private var INSTANCIA : JugadorBD? = null
 
-        fun obtenerBD(context : Context) : JugadorBD{
+        fun obtenerBD(context : Context) : JugadorBD {
             val tempInstancia = INSTANCIA
             if(tempInstancia != null){
                 return tempInstancia

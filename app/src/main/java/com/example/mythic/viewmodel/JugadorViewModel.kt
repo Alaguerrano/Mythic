@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.mythic.data.JugadorBD
+import com.example.mythic.data.jugador.JugadorBD
 import com.example.mythic.model.Jugador
 import com.example.mythic.repository.JugadorRepository
 import kotlinx.coroutines.Dispatchers

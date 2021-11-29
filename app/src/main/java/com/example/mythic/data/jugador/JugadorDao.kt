@@ -1,4 +1,4 @@
-package com.example.mythic.data
+package com.example.mythic.data.jugador
 
 
 import androidx.lifecycle.LiveData

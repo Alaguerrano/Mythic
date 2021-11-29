@@ -1,7 +1,7 @@
 package com.example.mythic.repository
 
 import androidx.lifecycle.LiveData
-import com.example.mythic.data.JugadorDao
+import com.example.mythic.data.jugador.JugadorDao
 import com.example.mythic.model.Jugador
 
 class JugadorRepository(private val jugadorDao: JugadorDao) {
