@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_crear_jugador.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 
 
-class InsertarPartidaFragment : Fragment() {
+class CrearJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
 

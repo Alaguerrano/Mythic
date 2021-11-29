@@ -1,5 +1,6 @@
 package com.example.mythic.fragments.lista_jugadores
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,6 +33,16 @@ class ListaJugadoresFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+
+        //************************************************************************************
+        //Si la lista de Jugadores esta vacia, decir al usuario que cree un perfil de Jugador
+        //*******************************************************************************
+        if(mJugadorViewModel.todosDatosLeidos.value?.size == 0) {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Perfiles de Jugador vacio")
+            builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
+            builder.create().show()
+        }
         mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
             adapter.establecerDatos(partida)
         })
