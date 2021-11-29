@@ -1,20 +1,19 @@
-package com.example.mythic.data.PJ
+package com.example.mythic.data.personaje
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.mythic.model.Jugador
 import com.example.mythic.model.Personaje
 
 @Dao
-interface PJDao {
+interface PersonajeDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun crearPJ(personaje: Personaje)
+    fun crearPersonaje(personaje: Personaje)
 
     @Update
-    fun actualizarPJ(personaje: Personaje)
+    fun actualizarPersonaje(personaje: Personaje)
 
     @Delete
-    fun borrarPJ(personaje: Personaje)
+    fun borrarPersonaje(personaje: Personaje)
 
     @Query("SELECT * FROM personajes_tabla ORDER BY id ASC")
     fun leerTodosLosDatos(): LiveData<List<Personaje>>
