@@ -43,4 +43,22 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
         this.jugadoresLista = jugador
         this.notifyDataSetChanged()
     }
+
+    fun hayOtroJugadorConNombreIgualA(nombre : String): Boolean {
+       if(jugadoresLista.isEmpty()){
+            return false
+        }
+       else{
+            jugadoresLista.forEach {
+                if(it.nombre == nombre)
+                {
+                    return true
+                }
+
+            }
+
+        }
+        return false
+
+    }
 }

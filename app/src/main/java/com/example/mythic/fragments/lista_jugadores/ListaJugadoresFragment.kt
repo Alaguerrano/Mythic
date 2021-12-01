@@ -34,20 +34,21 @@ class ListaJugadoresFragment : Fragment() {
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
 
-        //************************************************************************************
-        //Si la lista de Jugadores esta vacia, decir al usuario que cree un perfil de Jugador
-        //*******************************************************************************
-        if(mJugadorViewModel.listaJugadores.value?.isEmpty() == true) {
-            val builder = AlertDialog.Builder(requireContext())
-            builder.setTitle("Perfiles de Jugador vacio")
-            builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
-            builder.create().show()
-        }
-        else{
-            mJugadorViewModel.listaJugadores.observe(viewLifecycleOwner, Observer { jugador ->
-                adapter.establecerDatos(jugador)
-            })
-        }
+        mJugadorViewModel.listaJugadores.observe(viewLifecycleOwner, Observer { jugador ->
+            adapter.establecerDatos(jugador)
+            //************************************************************************************
+            //Si la lista de Jugadores esta vacia, decir al usuario que cree un perfil de Jugador
+            //*******************************************************************************
+            if(adapter.getItemCount() == 0) {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("Perfiles de Jugador vacio")
+                builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
+                builder.create().show()
+            }
+        })
+
+
+
 
 
         //********************************************************************

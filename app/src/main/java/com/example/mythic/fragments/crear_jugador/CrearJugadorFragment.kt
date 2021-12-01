@@ -1,5 +1,6 @@
 package com.example.mythic.fragments.crear_jugador
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mythic.R
 import com.example.mythic.data.jugador.JugadorDao
+import com.example.mythic.fragments.lista_jugadores.ListaJugadoresAdapter
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
@@ -27,9 +29,20 @@ class CrearJugadorFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_jugador, container, false)
+        val adapter = ListaJugadoresAdapter()
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
         view.button.setOnClickListener {
-            insertarDatos()
+            if(adapter.hayOtroJugadorConNombreIgualA(nombre_et.text.toString()) == true){
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("Perfil de Jugador usado")
+                builder.setMessage("Debes crear un Perfil de Jugador con otro nombre. Ese ya está usado.")
+                builder.create().show()
+
+            }
+            else{
+                insertarDatos()
+            }
+
         }
         return view
     }
@@ -40,18 +53,12 @@ class CrearJugadorFragment : Fragment() {
         val multijugador = multijugador_sw.isChecked()
         val motorDistintoMythic = motorDistintoMythic_sw.isChecked()
         if (comprobarCampos(nombre)) {
-            if (comprobarNombre(nombre) == true) {
-                val jugador = Jugador(0, nombre, masterHumano, multijugador, motorDistintoMythic)
-                mJugadorViewModel.crearJugador(jugador)
-                Toast.makeText(requireContext(), "Perfil de Jugador creado", Toast.LENGTH_LONG).show()
-                findNavController().navigate(R.id.action_crearJugadorFragment_to_listaJugadoresFragment)
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Debes elegir otro nombre para el Perfil de Jugador",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
+
+            val jugador = Jugador(0, nombre, masterHumano, multijugador, motorDistintoMythic)
+            mJugadorViewModel.crearJugador(jugador)
+            Toast.makeText(requireContext(), "Perfil de Jugador creado", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_crearJugadorFragment_to_listaJugadoresFragment)
+
         } else {
             Toast.makeText(requireContext(), "Rellena todos los campos", Toast.LENGTH_LONG).show()
         }
@@ -63,15 +70,6 @@ class CrearJugadorFragment : Fragment() {
         return !(TextUtils.isEmpty(nombre))
     }
 
-    private fun comprobarNombre(nombre: String): Boolean {
-        val otroNombre: String = "TODO"
-        Toast.makeText(requireContext(), "Otro nombre ${otroNombre}", Toast.LENGTH_LONG).show()
-       if( otroNombre == nombre){
-           return false
-       }else{
-           return true
-       }
 
-    }
 
 }
