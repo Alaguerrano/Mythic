@@ -37,15 +37,15 @@ class ListaJugadoresFragment : Fragment() {
         //************************************************************************************
         //Si la lista de Jugadores esta vacia, decir al usuario que cree un perfil de Jugador
         //*******************************************************************************
-        if(mJugadorViewModel.todosDatosLeidos.value?.size == 0) {
+        if(mJugadorViewModel.listaJugadores.value?.isEmpty() == true) {
             val builder = AlertDialog.Builder(requireContext())
             builder.setTitle("Perfiles de Jugador vacio")
             builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
             builder.create().show()
         }
         else{
-            mJugadorViewModel.todosDatosLeidos.observe(viewLifecycleOwner, Observer { partida ->
-                adapter.establecerDatos(partida)
+            mJugadorViewModel.listaJugadores.observe(viewLifecycleOwner, Observer { jugador ->
+                adapter.establecerDatos(jugador)
             })
         }
 

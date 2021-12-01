@@ -12,13 +12,15 @@ import kotlinx.coroutines.launch
 
 class JugadorViewModel (application: Application) : AndroidViewModel(application) {
 
-    val todosDatosLeidos : LiveData<List<Jugador>>
+    val listaJugadores : LiveData<List<Jugador>>
+
     private val repository : JugadorRepository
 
     init{
         val jugadorDao = JugadorBD.obtenerBD(application).jugadorDao()
         repository = JugadorRepository(jugadorDao)
-        todosDatosLeidos = repository.todosDatosLeidos
+        listaJugadores = repository.listaJugadores
+
     }
 
     fun crearJugador (jugador: Jugador){
@@ -38,4 +40,6 @@ class JugadorViewModel (application: Application) : AndroidViewModel(application
             repository.borrarJugador(jugador)
         }
     }
+
+
 }

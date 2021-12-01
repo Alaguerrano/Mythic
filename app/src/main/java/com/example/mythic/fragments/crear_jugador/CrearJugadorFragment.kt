@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mythic.R
+import com.example.mythic.data.jugador.JugadorDao
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
@@ -39,7 +40,7 @@ class CrearJugadorFragment : Fragment() {
         val multijugador = multijugador_sw.isChecked()
         val motorDistintoMythic = motorDistintoMythic_sw.isChecked()
         if (comprobarCampos(nombre)) {
-            if (comprobarNombre(nombre)) {
+            if (comprobarNombre(nombre) == true) {
                 val jugador = Jugador(0, nombre, masterHumano, multijugador, motorDistintoMythic)
                 mJugadorViewModel.crearJugador(jugador)
                 Toast.makeText(requireContext(), "Perfil de Jugador creado", Toast.LENGTH_LONG).show()
@@ -63,8 +64,13 @@ class CrearJugadorFragment : Fragment() {
     }
 
     private fun comprobarNombre(nombre: String): Boolean {
-        //TODO implementar
-        return true
+        val otroNombre: String = "TODO"
+        Toast.makeText(requireContext(), "Otro nombre ${otroNombre}", Toast.LENGTH_LONG).show()
+       if( otroNombre == nombre){
+           return false
+       }else{
+           return true
+       }
 
     }
 

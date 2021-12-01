@@ -5,7 +5,9 @@ import com.example.mythic.data.jugador.JugadorDao
 import com.example.mythic.model.Jugador
 
 class JugadorRepository(private val jugadorDao: JugadorDao) {
-    val todosDatosLeidos : LiveData<List<Jugador>> = jugadorDao.leerTodosLosDatos()
+    val listaJugadores : LiveData<List<Jugador>> = jugadorDao.obtenerJugadores()
+
+
 
     suspend fun crearJugador (jugador: Jugador){
         jugadorDao.crearJugador(jugador)
@@ -17,6 +19,8 @@ class JugadorRepository(private val jugadorDao: JugadorDao) {
 
     suspend fun borrarJugador (jugador: Jugador){
         jugadorDao.borrarJugador(jugador)
+
     }
+
 
 }
