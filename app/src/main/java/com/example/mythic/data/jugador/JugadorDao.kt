@@ -22,5 +22,4 @@ interface JugadorDao {
     @Query("SELECT * FROM jugadores_tabla ORDER BY id ASC")
     fun leerTodosLosDatos(): LiveData<List<Jugador>>
 
-
 }

@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/actualizarJugadorFragment"
         android:name="com.example.mythic.fragments.actualizar_jugador.ActualizarJugadorFragment"
-        android:label="Partida seleccionada:"
+        android:label="Editar Perfil Jugador"
         tools:layout="@layout/fragment_actualizar_jugador" >
         <action
             android:id="@+id/action_actualizarJugadorFragment_to_listaJugadoresFragment"
