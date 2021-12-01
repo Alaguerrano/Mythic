@@ -29,20 +29,10 @@ class CrearJugadorFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_jugador, container, false)
-        val adapter = ListaJugadoresAdapter()
+
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
         view.button.setOnClickListener {
-            if(adapter.hayOtroJugadorConNombreIgualA(nombre_et.text.toString()) == true){
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setTitle("Perfil de Jugador usado")
-                builder.setMessage("Debes crear un Perfil de Jugador con otro nombre. Ese ya está usado.")
-                builder.create().show()
-
-            }
-            else{
-                insertarDatos()
-            }
-
+            insertarDatos()
         }
         return view
     }

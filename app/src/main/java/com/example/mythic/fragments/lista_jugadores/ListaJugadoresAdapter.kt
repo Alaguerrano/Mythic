@@ -5,6 +5,8 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
@@ -24,6 +26,8 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
     override fun getItemCount(): Int {
         return jugadoresLista.size
     }
+
+
 
     override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val jugadorActual = jugadoresLista[position]
@@ -46,6 +50,7 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
 
     fun hayOtroJugadorConNombreIgualA(nombre : String): Boolean {
        if(jugadoresLista.isEmpty()){
+
             return false
         }
        else{
@@ -60,5 +65,9 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
         }
         return false
 
+    }
+
+    fun obtenerJugadorId(id : Int): Jugador{
+        return this.jugadoresLista[id]
     }
 }
