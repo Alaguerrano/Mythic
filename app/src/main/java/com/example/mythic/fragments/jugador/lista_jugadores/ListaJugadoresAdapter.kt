@@ -1,12 +1,10 @@
-package com.example.mythic.fragments.lista_jugadores
+package com.example.mythic.fragments.jugador.lista_jugadores
 
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
