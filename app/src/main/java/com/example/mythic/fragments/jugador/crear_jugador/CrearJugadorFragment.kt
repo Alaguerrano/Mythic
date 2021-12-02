@@ -3,6 +3,7 @@ package com.example.mythic.fragments.jugador.crear_jugador
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
+import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
 import com.example.mythic.model.Jugador
 import com.example.mythic.repository.JugadorRepository
 import com.example.mythic.viewmodel.JugadorViewModel
@@ -22,6 +25,8 @@ class CrearJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
 
+    private val args by navArgs<CrearJugadorFragmentArgs>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +36,7 @@ class CrearJugadorFragment : Fragment() {
 
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+
 
 
 
@@ -75,12 +81,17 @@ class CrearJugadorFragment : Fragment() {
     }
 
     private fun comprobarNombre(nombre: String): Boolean{
-        val repository  = JugadorRepository(mJugadorViewModel.jugadorDao)
-        repository.listaJugadores.value?.forEach(){
-            if(it.nombre == nombre){
-                return false
+
+        val listaJugadores  = args.listaJugadores
+        if (listaJugadores != null) {
+            Log.e("COMPROBAR NOMBRE", "Lista no nula")
+            for (jugador in listaJugadores){
+                if(jugador.nombre == nombre){
+                    return false
+                }
             }
         }
+        Log.e("COMPROBAR NOMBRE", "Lista nula")
         return true
     }
 

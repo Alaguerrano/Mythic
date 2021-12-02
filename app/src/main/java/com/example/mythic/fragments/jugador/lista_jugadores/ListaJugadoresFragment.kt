@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -55,7 +56,9 @@ class ListaJugadoresFragment : Fragment() {
         //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
         //*********************************************************************
         view.floatingActionButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listaJugadoresFragment_to_crearJugadorFragment)
+            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(adapter.obtenerArrayJugadores())
+            findNavController().navigate(action)
+
         }
         return view
     }

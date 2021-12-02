@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 class JugadorViewModel (application: Application) : AndroidViewModel(application) {
 
     val listaJugadores : LiveData<List<Jugador>>
-    var numeroJugadoresIgualNombre = MutableLiveData<Int>()
+
 
     private val repository : JugadorRepository
     public val jugadorDao : JugadorDao
@@ -50,19 +50,6 @@ class JugadorViewModel (application: Application) : AndroidViewModel(application
             repository.borrarJugador(jugador)
         }
     }
-
-
-    fun contarJugadoresConNombreIgualA(otroNombre : String){
-
-
-        viewModelScope.launch(Dispatchers.IO){
-            numeroJugadoresIgualNombre.postValue (repository.contarJugadoresConNombreIgualA(otroNombre))
-
-            Log.e("NUMERO:",numeroJugadoresIgualNombre.value.toString() )
-        }
-    }
-
-
 
 
 }

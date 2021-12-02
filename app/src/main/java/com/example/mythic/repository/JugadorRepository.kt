@@ -24,7 +24,8 @@ class JugadorRepository(private val jugadorDao: JugadorDao) {
     }
 
     suspend fun contarJugadoresConNombreIgualA(otroNombre : String): Int{
-        val numero = jugadorDao.contarJugadoresConNombreIgualA(otroNombre).toInt()
+        val numero = jugadorDao.contarJugadoresConNombreIgualA(otroNombre)
+        Log.e("REPOSITORY NUMERO:",numero.toString())
         return numero
     }
 
