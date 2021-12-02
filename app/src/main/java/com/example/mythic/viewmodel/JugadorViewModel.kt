@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.mythic.data.jugador.JugadorBD
+import com.example.mythic.data.jugador.JugadorDao
 import com.example.mythic.model.Jugador
 import com.example.mythic.repository.JugadorRepository
 import kotlinx.coroutines.Dispatchers
@@ -15,9 +16,10 @@ class JugadorViewModel (application: Application) : AndroidViewModel(application
     val listaJugadores : LiveData<List<Jugador>>
 
     private val repository : JugadorRepository
+    public val jugadorDao : JugadorDao
 
     init{
-        val jugadorDao = JugadorBD.obtenerBD(application).jugadorDao()
+        jugadorDao = JugadorBD.obtenerBD(application).jugadorDao()
         repository = JugadorRepository(jugadorDao)
         listaJugadores = repository.listaJugadores
 
