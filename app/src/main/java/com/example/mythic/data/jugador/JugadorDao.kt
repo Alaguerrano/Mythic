@@ -22,7 +22,7 @@ interface JugadorDao {
     @Query("SELECT * FROM jugadores_tabla ORDER BY id ASC")
     fun obtenerJugadores(): LiveData<List<Jugador>>
 
-    @Query("SELECT COUNT(nombre) FROM jugadores_tabla WHERE nombre =:otroNombre")
+    @Query("SELECT COUNT(*) FROM jugadores_tabla WHERE nombre =:otroNombre")
     fun contarJugadoresConNombreIgualA(otroNombre : String): Int
 
 
