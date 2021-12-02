@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.actualizar_jugador
+package com.example.mythic.fragments.jugador.actualizar_jugador
 
 import android.app.AlertDialog
 import android.os.Bundle

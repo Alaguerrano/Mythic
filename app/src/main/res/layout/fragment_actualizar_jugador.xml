@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".fragments.actualizar_jugador.ActualizarJugadorFragment">
+    android:background="#FBFDFD"
+    tools:context=".fragments.jugador.actualizar_jugador.ActualizarJugadorFragment">
 
 
     <EditText
@@ -17,7 +16,7 @@
         android:autofillHints=""
         android:backgroundTint="#92E3ED"
         android:ems="10"
-        android:hint="Nombre de la Partida"
+        android:hint="Nombre del Jugador"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text=""

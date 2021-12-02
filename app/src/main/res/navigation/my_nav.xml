@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listaJugadoresFragment"
-        android:name="com.example.mythic.fragments.lista_jugadores.ListaJugadoresFragment"
+        android:name="com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragment"
         android:label="Perfiles de Jugadores de Mythic:"
         tools:layout="@layout/fragment_lista_jugadores" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/crearJugadorFragment"
-        android:name="com.example.mythic.fragments.crear_jugador.CrearJugadorFragment"
+        android:name="com.example.mythic.fragments.jugador.crear_jugador.CrearJugadorFragment"
         android:label="Crear nuevo perfil de Jugador"
         tools:layout="@layout/fragment_crear_jugador" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/actualizarJugadorFragment"
-        android:name="com.example.mythic.fragments.actualizar_jugador.ActualizarJugadorFragment"
+        android:name="com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragment"
         android:label="Editar Perfil Jugador"
         tools:layout="@layout/fragment_actualizar_jugador" >
         <action

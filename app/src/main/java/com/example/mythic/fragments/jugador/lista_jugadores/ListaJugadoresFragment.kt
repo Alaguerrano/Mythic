@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.lista_jugadores
+package com.example.mythic.fragments.jugador.lista_jugadores
 
 import android.app.AlertDialog
 import android.os.Bundle

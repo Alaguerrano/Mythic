@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.crear_jugador
+package com.example.mythic.fragments.jugador.crear_jugador
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,8 +11,6 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mythic.R
-import com.example.mythic.data.jugador.JugadorDao
-import com.example.mythic.fragments.lista_jugadores.ListaJugadoresAdapter
 import com.example.mythic.model.Jugador
 import com.example.mythic.repository.JugadorRepository
 import com.example.mythic.viewmodel.JugadorViewModel
