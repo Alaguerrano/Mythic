@@ -16,5 +16,5 @@ interface PersonajeDao {
     fun borrarPersonaje(personaje: Personaje)
 
     @Query("SELECT * FROM personajes_tabla ORDER BY id ASC")
-    fun leerTodosLosDatos(): LiveData<List<Personaje>>
+    fun obtenerPersonajes(): LiveData<List<Personaje>>
 }
