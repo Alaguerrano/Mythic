@@ -42,4 +42,9 @@
             android:name="jugadorActual"
             app:argType="com.example.mythic.model.Jugador" />
     </fragment>
+    <fragment
+        android:id="@+id/jugadorSeleccionadoFragment"
+        android:name="com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragment"
+        android:label="Perfil de Jugador seleccionado"
+        tools:layout="@layout/fragment_jugador_seleccionado" />
 </navigation>
