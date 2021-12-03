@@ -14,8 +14,8 @@
             android:id="@+id/action_listaJugadoresFragment_to_crearJugadorFragment"
             app:destination="@id/crearJugadorFragment" />
         <action
-            android:id="@+id/action_listaJugadoresFragment_to_actualizarJugadorFragment"
-            app:destination="@id/actualizarJugadorFragment" />
+            android:id="@+id/action_listaJugadoresFragment_to_jugadorSeleccionadoFragment"
+            app:destination="@id/jugadorSeleccionadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearJugadorFragment"
@@ -35,16 +35,26 @@
         android:name="com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragment"
         android:label="Editar Perfil Jugador"
         tools:layout="@layout/fragment_actualizar_jugador" >
-        <action
-            android:id="@+id/action_actualizarJugadorFragment_to_listaJugadoresFragment"
-            app:destination="@id/listaJugadoresFragment" />
         <argument
             android:name="jugadorActual"
             app:argType="com.example.mythic.model.Jugador" />
+        <action
+            android:id="@+id/action_actualizarJugadorFragment_to_jugadorSeleccionadoFragment"
+            app:destination="@id/jugadorSeleccionadoFragment" />
+        <action
+            android:id="@+id/action_actualizarJugadorFragment_to_listaJugadoresFragment"
+            app:destination="@id/listaJugadoresFragment" />
     </fragment>
     <fragment
         android:id="@+id/jugadorSeleccionadoFragment"
         android:name="com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragment"
         android:label="Perfil de Jugador seleccionado"
-        tools:layout="@layout/fragment_jugador_seleccionado" />
+        tools:layout="@layout/fragment_jugador_seleccionado" >
+        <argument
+            android:name="jugadorActual"
+            app:argType="com.example.mythic.model.Jugador" />
+        <action
+            android:id="@+id/action_jugadorSeleccionadoFragment_to_actualizarJugadorFragment"
+            app:destination="@id/actualizarJugadorFragment" />
+    </fragment>
 </navigation>

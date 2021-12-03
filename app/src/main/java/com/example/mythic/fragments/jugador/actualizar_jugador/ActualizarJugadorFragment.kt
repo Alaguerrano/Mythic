@@ -66,7 +66,7 @@ class ActualizarJugadorFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.borrar_menu, menu)
+        inflater.inflate(R.menu.borrar_jugador_menu, menu)
     }
 
 

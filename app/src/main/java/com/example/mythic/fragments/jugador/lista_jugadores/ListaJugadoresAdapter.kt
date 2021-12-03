@@ -34,7 +34,7 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
 
         //Si pulso en un jugador para actualizarlo
         holder.itemView.filaLayout.setOnClickListener{
-            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToActualizarJugadorFragment(jugadorActual)
+            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToJugadorSeleccionadoFragment(jugadorActual)
             holder.itemView.findNavController().navigate(action)
         }
     }
