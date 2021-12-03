@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
+import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
+import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
@@ -18,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 class JugadorSeleccionadoFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
+    private lateinit var mAventuraViewModel: AventuraViewModel
     private val args by navArgs<ActualizarJugadorFragmentArgs>()
 
     override fun onCreateView(
@@ -28,6 +31,7 @@ class JugadorSeleccionadoFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_jugador_seleccionado, container, false)
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
         view.nombre_jugador.setText(args.jugadorActual.nombre)
         if(args.jugadorActual.masterHumano == true){
@@ -62,7 +66,9 @@ class JugadorSeleccionadoFragment : Fragment() {
     }
 
     private fun editarJugador() {
-        findNavController().navigate(R.id.action_jugadorSeleccionadoFragment_to_actualizarJugadorFragment)
+        val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToActualizarJugadorFragment(args.jugadorActual)
+        findNavController().navigate(action)
+
     }
 
 

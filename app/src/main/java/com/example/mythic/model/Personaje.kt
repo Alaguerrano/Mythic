@@ -11,11 +11,11 @@ import kotlinx.android.parcel.Parcelize
 data class Personaje(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
+    val idJugador : Int,
     val esPJ : Boolean,
     val esNPJ : Boolean,
     val esPJLibre : Boolean,
     val esPJPuntos : Boolean,
-    @ColumnInfo(name = "nombre")
     val nombre : String,
     val resumen : String,
     val favor : Int

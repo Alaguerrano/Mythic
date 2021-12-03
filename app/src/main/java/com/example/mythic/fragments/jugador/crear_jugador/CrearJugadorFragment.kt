@@ -16,6 +16,7 @@ import com.example.mythic.R
 import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
 import com.example.mythic.model.Jugador
 import com.example.mythic.repository.JugadorRepository
+import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
@@ -24,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 class CrearJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
+    private lateinit var mAventuraViewModel: AventuraViewModel
 
     private val args by navArgs<CrearJugadorFragmentArgs>()
 
@@ -36,7 +38,7 @@ class CrearJugadorFragment : Fragment() {
 
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
-
+        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
 
 

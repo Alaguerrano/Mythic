@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class Aventura(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
+    val idJugador: Int,
     val nombre : String,
     val premisa : String,
     val caos : Int
