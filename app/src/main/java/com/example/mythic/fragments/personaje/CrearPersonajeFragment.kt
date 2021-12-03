@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.crear_personaje.personaje
+package com.example.mythic.fragments.personaje
 
 import androidx.fragment.app.Fragment
 

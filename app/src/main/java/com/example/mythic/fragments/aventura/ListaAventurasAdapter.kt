@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.jugador.jugador_seleccionado
+package com.example.mythic.fragments.aventura
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -10,8 +10,6 @@ import com.example.mythic.R
 
 import com.example.mythic.model.Aventura
 
-import kotlinx.android.synthetic.main.fila_lista_aventura.view.*
-import kotlinx.android.synthetic.main.fila_lista_jugador.view.*
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.filaLayout
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.nombre_textView
 

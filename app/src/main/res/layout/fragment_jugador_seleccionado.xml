@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/numero_jugadores" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_aventuras_rv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

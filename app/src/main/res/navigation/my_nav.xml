@@ -56,5 +56,13 @@
         <action
             android:id="@+id/action_jugadorSeleccionadoFragment_to_actualizarJugadorFragment"
             app:destination="@id/actualizarJugadorFragment" />
+        <action
+            android:id="@+id/action_jugadorSeleccionadoFragment_to_crearAventuraFragment"
+            app:destination="@id/crearAventuraFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/crearAventuraFragment"
+        android:name="com.example.mythic.fragments.aventura.CrearAventuraFragment"
+        android:label="fragment_crear_aventura"
+        tools:layout="@layout/fragment_crear_aventura" />
 </navigation>

@@ -1,23 +1,24 @@
 package com.example.mythic.model.tabla
 
 public class tablaDestino(){
-    val valores = arrayOf(  arrayOf( 50, 25, 10,  5,  5,  0,   0, -20, -20, -40, -40, -55, -65),
-                            arrayOf( 75, 50, 25, 15, 10,  5,   5,   0,   0, -20, -20, -35, -45),
-                            arrayOf( 90, 75, 50, 35, 25, 15,  10,   5,   5,   0,   0, -15, -25),
-                            arrayOf( 95, 85, 65, 50, 45, 25,  15,  10,   5,   5,   5,  -5, -15),
-                            arrayOf(100, 90, 75, 55, 50, 35,  20,  15,  10,   5,   5,   0, -10),
-                            arrayOf(105, 95, 85, 75, 65, 50,  35,  25,  15,  10,  10,   5,  -5),
-                            arrayOf(110, 95, 90, 85, 80, 65,  50,  45,  25,  20,  15,   5,   0),
-                            arrayOf(115,100, 95, 90, 85, 75,  55,  50,  35,  25,  20,  10,   5),
-                            arrayOf(120,105, 95, 95, 90, 85,  75,  65,  50,  45,  35,  15,   5),
-                            arrayOf(125,115,100, 95, 95, 90,  80,  75,  55,  50,  45,  20,  10),
-                            arrayOf(130,125,110, 95, 95, 90,  85,  80,  65,  55,  50,  25,  10),
-                            arrayOf(150,145,130,100,100, 95,  95,  90,  85,  80,  75,  50,  25),
-                            arrayOf(170,165,150,120,120,100, 100,  95,  95,  90,  90,  75,  50))
+    val valores = arrayOf(
+        arrayOf(arrayOf(10,50,91),arrayOf(5,25,86),arrayOf(2,10,83),arrayOf(1,5,82),arrayOf(1,5,82),arrayOf(0,0,81),arrayOf(0,0,81),arrayOf(0,-20,77),arrayOf(0,-20,77),arrayOf(0,-40,73),arrayOf(0,-40,73),arrayOf(0,-55,70),arrayOf(0,-65,68)),
+        arrayOf(arrayOf(15,75,96),arrayOf(50), arrayOf(25), arrayOf(15), arrayOf(10),  arrayOf(5),   arrayOf(5),   arrayOf(0),  arrayOf(0), arrayOf(-20), arrayOf(-20), arrayOf(-35, arrayOf(-45),
+        arrayOf(arrayOf(18,90,99),arrayOf(75), arrayOf(50), arrayOf(35), arrayOf(25), arrayOf(15),  arrayOf(10),   arrayOf(5),   arrayOf(5),   arrayOf(0),   arrayOf(0), arrayOf(-15, arrayOf(-25),
+        arrayOf(arrayOf(19,95,100),arrayOf(85), arrayOf(65), arrayOf(50), arrayOf(45), arrayOf(25),  arrayOf(15),  arrayOf(10),   arrayOf(5),   arrayOf(5),   arrayOf(5),  arrayOf(-5, arrayOf(-15),
+        arrayOf(arrayOf(20,100,0),arrayOf(90), arrayOf(75), arrayOf(55), arrayOf(50), arrayOf(35),  arrayOf(20),  arrayOf(15),  arrayOf(10),   arrayOf(5),   arrayOf(5),   arrayOf(0, arrayOf(-10),
+        arrayOf(arrayOf(21,105,0), arrayOf(95), arrayOf(85), arrayOf(75), arrayOf(65), arrayOf(50),  arrayOf(35),  arrayOf(25),  arrayOf(15),  arrayOf(10),  arrayOf(10),   arrayOf(5,  arrayOf(-5),
+        arrayOf(arrayOf(22,110,0), arrayOf(95), arrayOf(90), arrayOf(85), arrayOf(80), arrayOf(65),  arrayOf(50),  arrayOf(45),  arrayOf(25),  arrayOf(20),  arrayOf(15),   arrayOf(5,   arrayOf(0),
+        arrayOf(arrayOf(23,115,0),arrayOf(100), arrayOf(95), arrayOf(90), arrayOf(85), arrayOf(75),  arrayOf(55),  arrayOf(50),  arrayOf(35),  arrayOf(25),  arrayOf(20),  arrayOf(10,   arrayOf(5)),
+        arrayOf(arrayOf(24,120,0),arrayOf(105), arrayOf(95), arrayOf(95), arrayOf(90), arrayOf(85),  arrayOf(75),  arrayOf(65),  arrayOf(50),  arrayOf(45),  arrayOf(35),  arrayOf(15,   arrayOf(5)),
+        arrayOf(arrayOf(25,125,0),arrayOf(115),arrayOf(100), arrayOf(95), arrayOf(95),arrayOf( 90),  arrayOf(80),  arrayOf(75),  arrayOf(55),  arrayOf(50),  arrayOf(45),  arrayOf(20,  arrayOf(10)),
+        arrayOf(arrayOf(26,130,0),arrayOf(125),arrayOf(110), arrayOf(95), arrayOf(95), arrayOf(90),  arrayOf(85),  arrayOf(80),  arrayOf(65),  arrayOf(55),  arrayOf(50),  arrayOf(25,  arrayOf(10)),
+        arrayOf(arrayOf(30,150,0),arrayOf(145),arrayOf(130),arrayOf(100),arrayOf(100), arrayOf(95),  arrayOf(95),  arrayOf(90),  arrayOf(85),  arrayOf(80),  arrayOf(75),  arrayOf(50,  arrayOf(25)),
+        arrayOf(arrayOf(34,170,0),arrayOf(165),arrayOf(150),arrayOf(120),arrayOf(120),arrayOf(100), arrayOf(100),  arrayOf(95),  arrayOf(95),  arrayOf(90),  arrayOf(90),  arrayOf(75,  arrayOf(50))
 
     public fun obtenerRespuestaProbabilidad(tirada: Int, rangoProbabilidadSI : Int, caos : Int = 0) : String{
 
-        if(tirada <= valores[obtenerIndiceTablaSegunRangoProbabilidadSI(rangoProbabilidadSI)][obtenerIndiceTablaSegunRangoCaos(caos)] ){
+        if(tirada <= valores[obtenerIndiceTablaSegunRangoProbabilidadSI(rangoProbabilidadSI)][obtenerIndiceTablaSegunRangoCaos(caos)][1] ){
             return "SI"
         }else{
             return "NO"
