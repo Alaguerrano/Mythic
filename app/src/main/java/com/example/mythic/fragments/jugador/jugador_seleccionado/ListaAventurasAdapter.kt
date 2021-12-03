@@ -4,13 +4,12 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
-import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresAdapter
-import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
+
 import com.example.mythic.model.Aventura
-import com.example.mythic.model.Jugador
+
 import kotlinx.android.synthetic.main.fila_lista_aventura.view.*
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.*
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.filaLayout
@@ -34,7 +33,7 @@ class ListaAventurasAdapter: RecyclerView.Adapter<ListaAventurasAdapter.MiViewHo
 
     override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val aventuraActual = aventurasLista[position]
-        holder.itemView.nombre_textView.text = aventurasLista.nombre
+        holder.itemView.nombre_textView.text = aventuraActual.nombre
 
 
         //Si pulso en una aventura para actualizarla

@@ -5,16 +5,20 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mythic.R
 import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
+import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresAdapter
 import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
+import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
 
 class JugadorSeleccionadoFragment : Fragment() {
@@ -30,7 +34,10 @@ class JugadorSeleccionadoFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_jugador_seleccionado, container, false)
 
-
+        val adapter = ListaAventurasAdapter()
+        val recyclerView = view.recyclerView
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
@@ -52,7 +59,18 @@ class JugadorSeleccionadoFragment : Fragment() {
         }else{
             view.motor_juego.setText("Motor de juego: Mythic")
         }
-
+        mAventuraViewModel.listaAventuras.observe(viewLifecycleOwner, Observer { aventura ->
+            adapter.establecerDatos(aventura)
+            //************************************************************************************
+            //Si la lista de Aventuras esta vacia, decir al usuario que cree una aventura
+            //*******************************************************************************
+            if(adapter.getItemCount() == 0) {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("No tienes ninguna aventura creada")
+                builder.setMessage("Debes crear una aventura.")
+                builder.create().show()
+            }
+        })
         setHasOptionsMenu(true)
         return view
     }
