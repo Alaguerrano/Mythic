@@ -8,7 +8,7 @@ import com.example.mythic.model.Personaje
 
 @Database(entities = [Personaje::class], version = 1, exportSchema = false)
 abstract class PersonajeBD : RoomDatabase() {
-    abstract fun PersonajeDao() : PersonajeDao
+    abstract fun personajeDao() : PersonajeDao
 
     companion object{
         @Volatile
