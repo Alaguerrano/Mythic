@@ -19,4 +19,6 @@ interface AventuraDao {
 
     @Query("SELECT * FROM aventuras_tabla ORDER BY id ASC")
     fun obtenerAventuras(): LiveData<List<Aventura>>
+
+
 }

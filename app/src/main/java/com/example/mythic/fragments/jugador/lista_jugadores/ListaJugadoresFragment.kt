@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.mythic.R
+import com.example.mythic.fragments.aventura.ListaAventurasAdapter
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
@@ -29,6 +30,7 @@ class ListaJugadoresFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_jugadores, container, false)
 
         val adapter = ListaJugadoresAdapter()
+
         val recyclerView = view.recyclerView
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -56,7 +58,7 @@ class ListaJugadoresFragment : Fragment() {
         //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
         //*********************************************************************
         view.floatingActionButton.setOnClickListener{
-            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(adapter.obtenerArrayJugadores())
+            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(adapter.obtenerArrayJugadores(),null)
             findNavController().navigate(action)
 
         }

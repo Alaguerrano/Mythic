@@ -59,8 +59,12 @@ class JugadorSeleccionadoFragment : Fragment() {
             //************************************************************************************
             //Si la lista de Aventuras esta vacia, decir al usuario que cree una aventura
             //*******************************************************************************
-            if(adapter.getItemCount() == 0) {
-               //TODO mandar directamente a crear una Aventura
+            if(tieneAlgunaAventuraElJugador()) {
+                //TODO
+                //Comprobar si hay alguna aventura creada con la id del Jugador
+                val idJugadorActual = args.jugadorActual.id
+
+
             }
         })
         setHasOptionsMenu(true)
@@ -82,6 +86,10 @@ class JugadorSeleccionadoFragment : Fragment() {
         val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToActualizarJugadorFragment(args.jugadorActual)
         findNavController().navigate(action)
 
+    }
+
+    private fun tieneAlgunaAventuraElJugador(): Boolean{
+        return false
     }
 
 

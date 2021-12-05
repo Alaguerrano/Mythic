@@ -29,6 +29,10 @@
             android:name="listaJugadores"
             app:argType="com.example.mythic.model.Jugador[]"
             app:nullable="true" />
+        <argument
+            android:name="listaAventuras"
+            app:argType="com.example.mythic.model.Aventura[]"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/actualizarJugadorFragment"
