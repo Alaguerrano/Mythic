@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.mythic.data.aventura.AventuraBD
 import com.example.mythic.data.aventura.AventuraDao
 import com.example.mythic.model.Aventura
+import com.example.mythic.model.Jugador
 import com.example.mythic.repository.AventuraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

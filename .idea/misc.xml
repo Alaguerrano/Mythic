@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fila_lista_aventura.xml" value="0.1953125" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fila_lista_jugador.xml" value="0.1953125" />
         <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_crear_aventura.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_crear_jugador.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_jugador_seleccionado.xml" value="0.1953125" />
+        <entry key="..\:/Users/34679/AndroidStudioProjects/Mythic/app/src/main/res/layout/fragment_lista_jugadores.xml" value="0.1953125" />
         <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2" />
         <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
         <entry key="..\:/Users/lpsq11/AndroidStudioProjects/Mythic/app/src/main/res/layout/activity_main.xml" value="0.15896739130434784" />

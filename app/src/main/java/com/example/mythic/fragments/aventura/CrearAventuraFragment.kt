@@ -79,8 +79,9 @@ class CrearAventuraFragment : Fragment() {
         val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
         val listaAventurasJugadorSeleccionado = listaAventurasAdapter.obtenerlistaAventurasJugadorSeleccionado()
         if (listaAventurasJugadorSeleccionado != null) {
-            Log.e("COMPROBAR NOMBRE", "Lista no nula")
+            Log.e("Lista Aventuras Jugador tamaño:", listaAventurasJugadorSeleccionado.size.toString())
             for (aventura in listaAventurasJugadorSeleccionado){
+                Log.e("NOMBRE", aventura.nombre)
                 if(aventura.nombre == nombre){
                     return false
                 }
