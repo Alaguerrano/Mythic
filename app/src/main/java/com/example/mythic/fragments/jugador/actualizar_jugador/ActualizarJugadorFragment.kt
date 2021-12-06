@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
+import com.example.mythic.fragments.aventura.ListaAventurasAdapter
 import com.example.mythic.model.Jugador
+import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
@@ -19,6 +21,7 @@ import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
 class ActualizarJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
+    private lateinit var mAventuraViewModel: AventuraViewModel
 
     private val args by navArgs<ActualizarJugadorFragmentArgs>()
 
@@ -29,7 +32,10 @@ class ActualizarJugadorFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_actualizar_jugador, container, false)
 
+
+
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
         view.actualizar_master_humano_sw.setChecked(args.jugadorActual.masterHumano)
@@ -81,6 +87,9 @@ class ActualizarJugadorFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Si"){_,_ ->
             mJugadorViewModel.borrarJugador(args.jugadorActual)
+            val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
+            val listaAventurasJugadorSeleccionado = listaAventurasAdapter.obtenerlistaAventurasJugadorSeleccionado()
+            mAventuraViewModel.borrarAventuras(listaAventurasJugadorSeleccionado)
             Toast.makeText(requireContext(), "Perfil de Jugador borrado: ${args.jugadorActual.nombre}", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_actualizarJugadorFragment_to_listaJugadoresFragment)
 

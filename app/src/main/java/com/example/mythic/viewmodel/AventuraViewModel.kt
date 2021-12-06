@@ -45,5 +45,16 @@ class AventuraViewModel (application: Application) : AndroidViewModel(applicatio
         }
     }
 
+    fun borrarAventuras (aventuras : Array<Aventura>){
+        viewModelScope.launch(Dispatchers.IO) {
+            for(aventura in aventuras) {
+                repository.borrarAventura(aventura)
+            }
+        }
+    }
+
+    fun obtenerAventuraIdJugador (idJugador : Int): LiveData<List<Aventura>>{
+        return repository.obtenerAventuraIdJugador(idJugador)
+    }
 
 }

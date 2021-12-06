@@ -22,5 +22,8 @@ class AventuraRepository(private val aventuraDao: AventuraDao) {
         aventuraDao.borrarAventura(aventura)
     }
 
+    fun obtenerAventuraIdJugador (idJugador : Int): LiveData<List<Aventura>>{
+        return aventuraDao.obtenerAventuraIdJugador(idJugador)
+    }
 
 }

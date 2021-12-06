@@ -29,20 +29,22 @@ class ListaJugadoresFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_lista_jugadores, container, false)
 
-        val adapter = ListaJugadoresAdapter()
+        val listaJugadoresAdapter = ListaJugadoresAdapter()
+
+
 
         val recyclerView = view.recyclerView
-        recyclerView.adapter = adapter
+        recyclerView.adapter = listaJugadoresAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
 
         mJugadorViewModel.listaJugadores.observe(viewLifecycleOwner, Observer { jugador ->
-            adapter.establecerDatos(jugador)
+            listaJugadoresAdapter.establecerDatos(jugador)
             //************************************************************************************
             //Si la lista de Jugadores esta vacia, decir al usuario que cree un perfil de Jugador
             //*******************************************************************************
-            if(adapter.getItemCount() == 0) {
+            if(listaJugadoresAdapter.getItemCount() == 0) {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Perfiles de Jugador vacio")
                 builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
@@ -58,7 +60,7 @@ class ListaJugadoresFragment : Fragment() {
         //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
         //*********************************************************************
         view.floatingActionButton.setOnClickListener{
-            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(adapter.obtenerArrayJugadores(),null)
+            val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(listaJugadoresAdapter.obtenerArrayJugadores())
             findNavController().navigate(action)
 
         }

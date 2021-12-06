@@ -22,32 +22,34 @@ class JugadorViewModel (application: Application) : AndroidViewModel(application
     val listaJugadores : LiveData<List<Jugador>>
 
 
-    private val repository : JugadorRepository
+    private val jugadorRepository : JugadorRepository
     public val jugadorDao : JugadorDao
 
     init{
         jugadorDao = JugadorBD.obtenerBD(application).jugadorDao()
-        repository = JugadorRepository(jugadorDao)
-        listaJugadores = repository.listaJugadores
+        jugadorRepository = JugadorRepository(jugadorDao)
+        listaJugadores = jugadorRepository.listaJugadores
 
 
     }
 
     fun crearJugador (jugador: Jugador){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.crearJugador(jugador)
+            jugadorRepository.crearJugador(jugador)
         }
     }
 
     fun actualizarJugador (jugador: Jugador){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.actualizarJugador(jugador)
+            jugadorRepository.actualizarJugador(jugador)
         }
     }
 
     fun borrarJugador (jugador: Jugador){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.borrarJugador(jugador)
+            //Borrar jugador de la base de datos
+            jugadorRepository.borrarJugador(jugador)
+            //Borrar aventuras que tenga la id del jugador actual
         }
     }
 

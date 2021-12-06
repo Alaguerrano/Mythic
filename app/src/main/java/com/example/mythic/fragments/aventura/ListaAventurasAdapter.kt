@@ -13,9 +13,11 @@ import com.example.mythic.model.Aventura
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.filaLayout
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.nombre_textView
 
-class ListaAventurasAdapter: RecyclerView.Adapter<ListaAventurasAdapter.MiViewHolder>(){
+class ListaAventurasAdapter(idJugador : Int): RecyclerView.Adapter<ListaAventurasAdapter.MiViewHolder>(){
 
+    //Todas las aventuras
     private var aventurasLista = emptyList<Aventura>()
+    private var idJugadorSeleccionado = idJugador
 
     class MiViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
@@ -49,6 +51,17 @@ class ListaAventurasAdapter: RecyclerView.Adapter<ListaAventurasAdapter.MiViewHo
 
     fun obtenerArrayAventuras(): Array<Aventura>{
         return this.aventurasLista.toTypedArray()
+    }
+
+    fun obtenerlistaAventurasJugadorSeleccionado(): Array<Aventura>{
+        val listaAventurasJugador : MutableList<Aventura> = arrayListOf()
+        for (aventura in aventurasLista){
+            if(aventura.idJugador == idJugadorSeleccionado)
+            {
+                listaAventurasJugador.add(aventura)
+            }
+        }
+        return listaAventurasJugador.toTypedArray()
     }
 
 }

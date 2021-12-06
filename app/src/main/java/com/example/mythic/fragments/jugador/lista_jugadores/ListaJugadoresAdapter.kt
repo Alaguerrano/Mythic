@@ -17,6 +17,7 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
     private var jugadoresLista = emptyList<Jugador>()
 
 
+
     class MiViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MiViewHolder {
@@ -31,6 +32,7 @@ class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHo
 
     override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val jugadorActual = jugadoresLista[position]
+
         holder.itemView.nombre_textView.text = jugadorActual.nombre
 
 

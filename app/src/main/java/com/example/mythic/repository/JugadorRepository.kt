@@ -1,6 +1,7 @@
 package com.example.mythic.repository
 
 import androidx.lifecycle.LiveData
+import com.example.mythic.data.aventura.AventuraDao
 import com.example.mythic.data.jugador.JugadorDao
 import com.example.mythic.model.Jugador
 
@@ -19,6 +20,8 @@ class JugadorRepository(private val jugadorDao: JugadorDao) {
 
     suspend fun borrarJugador (jugador: Jugador){
         jugadorDao.borrarJugador(jugador)
+        //Por cada aventura que tenga el jugador
+
 
     }
 

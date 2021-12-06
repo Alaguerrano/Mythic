@@ -29,10 +29,6 @@
             android:name="listaJugadores"
             app:argType="com.example.mythic.model.Jugador[]"
             app:nullable="true" />
-        <argument
-            android:name="listaAventuras"
-            app:argType="com.example.mythic.model.Aventura[]"
-            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/actualizarJugadorFragment"
@@ -67,6 +63,13 @@
     <fragment
         android:id="@+id/crearAventuraFragment"
         android:name="com.example.mythic.fragments.aventura.CrearAventuraFragment"
-        android:label="fragment_crear_aventura"
-        tools:layout="@layout/fragment_crear_aventura" />
+        android:label="Crear Aventura"
+        tools:layout="@layout/fragment_crear_aventura" >
+        <argument
+            android:name="jugadorActual"
+            app:argType="com.example.mythic.model.Jugador" />
+        <action
+            android:id="@+id/action_crearAventuraFragment_to_jugadorSeleccionadoFragment"
+            app:destination="@id/jugadorSeleccionadoFragment" />
+    </fragment>
 </navigation>
