@@ -38,7 +38,7 @@ class CrearJugadorFragment : Fragment() {
 
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+
 
 
 

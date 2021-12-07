@@ -29,6 +29,7 @@ class CrearAventuraFragment : Fragment() {
 
     private val args by navArgs<CrearAventuraFragmentArgs>()
     private lateinit var mAventuraViewModel: AventuraViewModel
+    private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +38,8 @@ class CrearAventuraFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_aventura, container, false)
 
-        val aventuraViewModelFactory = AventuraViewModelFactory(args.jugadorActual.id)
-        mAventuraViewModel = ViewModelProvider(this,aventuraViewModelFactory).get(AventuraViewModel::class.java)
+        mAventuraViewModelFactory = AventuraViewModelFactory(args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
         view.button.setOnClickListener {
 

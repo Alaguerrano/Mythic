@@ -10,17 +10,17 @@ import com.example.mythic.repository.AventuraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AventuraViewModel (application: Application, val idJugador: Int) : AndroidViewModel(application) {
+class AventuraViewModel (application: Application, idJugador: Int) : AndroidViewModel(application) {
 
     val listaAventuras : LiveData<List<Aventura>>
-
+    val id = idJugador
 
     private val repository : AventuraRepository
     public val aventuraDao : AventuraDao
 
     init{
         aventuraDao = AventuraBD.obtenerBD(application).aventuraDao()
-        repository = AventuraRepository(aventuraDao, idJugador)
+        repository = AventuraRepository(aventuraDao, id)
         listaAventuras = repository.listaAventurasJugador
 
 
@@ -54,10 +54,6 @@ class AventuraViewModel (application: Application, val idJugador: Int) : Android
     }
 
 
+
 }
 
-class AventuraViewModelFactory(val idJugador: Int) : ViewModelProvider.Factory{
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return modelClass.getConstructor(Int::class.java).newInstance(idJugador)
-    }
-}

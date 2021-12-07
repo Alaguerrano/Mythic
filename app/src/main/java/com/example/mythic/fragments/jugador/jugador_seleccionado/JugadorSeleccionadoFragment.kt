@@ -26,8 +26,9 @@ import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
 class JugadorSeleccionadoFragment : Fragment() {
 
-    private lateinit var mJugadorViewModel: JugadorViewModel
+
     private lateinit var mAventuraViewModel: AventuraViewModel
+    private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
     private val args by navArgs<JugadorSeleccionadoFragmentArgs>()
 
     override fun onCreateView(
@@ -43,8 +44,8 @@ class JugadorSeleccionadoFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
-        val aventuraViewModelFactory = AventuraViewModelFactory(args.jugadorActual.id)
-        mAventuraViewModel = ViewModelProvider(this,aventuraViewModelFactory).get(AventuraViewModel::class.java)
+        mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
 
         view.nombre_jugador.setText(args.jugadorActual.nombre)
