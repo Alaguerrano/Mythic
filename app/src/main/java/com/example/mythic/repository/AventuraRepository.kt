@@ -5,10 +5,8 @@ import com.example.mythic.data.aventura.AventuraDao
 import com.example.mythic.model.Aventura
 
 
-class AventuraRepository(private val aventuraDao: AventuraDao) {
-    val listaAventuras : LiveData<List<Aventura>> = aventuraDao.obtenerAventuras()
-
-
+class AventuraRepository(private val aventuraDao: AventuraDao, idJugador : Int) {
+    val listaAventurasJugador : LiveData<List<Aventura>> = aventuraDao.obtenerAventurasJugador(idJugador)
 
     suspend fun crearAventura (aventura: Aventura){
         aventuraDao.crearAventura(aventura)
@@ -20,10 +18,6 @@ class AventuraRepository(private val aventuraDao: AventuraDao) {
 
     suspend fun borrarAventura (aventura: Aventura){
         aventuraDao.borrarAventura(aventura)
-    }
-
-    fun obtenerAventuraIdJugador (idJugador : Int): LiveData<List<Aventura>>{
-        return aventuraDao.obtenerAventuraIdJugador(idJugador)
     }
 
 }

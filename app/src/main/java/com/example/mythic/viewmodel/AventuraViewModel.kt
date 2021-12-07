@@ -12,7 +12,7 @@ import com.example.mythic.repository.AventuraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AventuraViewModel (application: Application) : AndroidViewModel(application) {
+class AventuraViewModel (application: Application, idJugador: Int) : AndroidViewModel(application) {
 
     val listaAventuras : LiveData<List<Aventura>>
 
@@ -22,8 +22,8 @@ class AventuraViewModel (application: Application) : AndroidViewModel(applicatio
 
     init{
         aventuraDao = AventuraBD.obtenerBD(application).aventuraDao()
-        repository = AventuraRepository(aventuraDao)
-        listaAventuras = repository.listaAventuras
+        repository = AventuraRepository(aventuraDao, idJugador)
+        listaAventuras = repository.listaAventurasJugador
 
 
     }
@@ -46,6 +46,7 @@ class AventuraViewModel (application: Application) : AndroidViewModel(applicatio
         }
     }
 
+    //TODO ver si funciona o hacerlo desde DAO con Query
     fun borrarAventuras (aventuras : Array<Aventura>){
         viewModelScope.launch(Dispatchers.IO) {
             for(aventura in aventuras) {
@@ -54,8 +55,5 @@ class AventuraViewModel (application: Application) : AndroidViewModel(applicatio
         }
     }
 
-    fun obtenerAventuraIdJugador (idJugador : Int): LiveData<List<Aventura>>{
-        return repository.obtenerAventuraIdJugador(idJugador)
-    }
 
 }

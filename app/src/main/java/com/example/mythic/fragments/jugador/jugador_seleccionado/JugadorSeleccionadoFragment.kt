@@ -26,7 +26,7 @@ class JugadorSeleccionadoFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
     private lateinit var mAventuraViewModel: AventuraViewModel
-    private val args by navArgs<ActualizarJugadorFragmentArgs>()
+    private val args by navArgs<JugadorSeleccionadoFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

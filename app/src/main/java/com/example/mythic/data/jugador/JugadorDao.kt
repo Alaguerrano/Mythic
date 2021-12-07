@@ -3,6 +3,7 @@ package com.example.mythic.data.jugador
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.mythic.model.Aventura
 import com.example.mythic.model.Jugador
 
 
@@ -21,5 +22,7 @@ interface JugadorDao {
 
     @Query("SELECT * FROM jugadores_tabla ORDER BY id ASC")
     fun obtenerJugadores(): LiveData<List<Jugador>>
+
+
 
 }
