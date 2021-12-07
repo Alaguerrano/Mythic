@@ -1,6 +1,7 @@
 package com.example.mythic.fragments.aventura
 
 import android.app.AlertDialog
+import android.app.Application
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -34,7 +35,7 @@ class CrearAventuraFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_aventura, container, false)
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+        mAventuraViewModel = AventuraViewModel(Application(),args.jugadorActual.id)
 
         view.button.setOnClickListener {
 
@@ -77,10 +78,10 @@ class CrearAventuraFragment : Fragment() {
     }
     private fun comprobarNombre(nombre: String): Boolean{
         val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
-        val listaAventurasJugadorSeleccionado = listaAventurasAdapter.obtenerlistaAventurasJugadorSeleccionado()
-        if (listaAventurasJugadorSeleccionado != null) {
-            Log.e("Lista Aventuras Jugador tamaño:", listaAventurasJugadorSeleccionado.size.toString())
-            for (aventura in listaAventurasJugadorSeleccionado){
+
+        if (listaAventurasAdapter.getItemCount() != 0) {
+            Log.e("Lista Aventuras Jugador tamaño:", "Distinto de cero")
+            for (aventura in listaAventurasAdapter.obtenerArrayAventuras()){
                 Log.e("NOMBRE", aventura.nombre)
                 if(aventura.nombre == nombre){
                     return false
