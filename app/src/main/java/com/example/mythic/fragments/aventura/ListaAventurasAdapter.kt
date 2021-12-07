@@ -53,15 +53,6 @@ class ListaAventurasAdapter(idJugador : Int): RecyclerView.Adapter<ListaAventura
         return this.aventurasLista.toTypedArray()
     }
 
-    fun obtenerlistaAventurasJugadorSeleccionado(): Array<Aventura>{
-        val listaAventurasJugador : MutableList<Aventura> = arrayListOf()
-        for (aventura in aventurasLista){
-            if(aventura.idJugador == idJugadorSeleccionado)
-            {
-                listaAventurasJugador.add(aventura)
-            }
-        }
-        return listaAventurasJugador.toTypedArray()
-    }
+   
 
 }

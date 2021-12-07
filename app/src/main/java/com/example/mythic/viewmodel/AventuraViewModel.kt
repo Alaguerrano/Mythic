@@ -12,7 +12,7 @@ import com.example.mythic.repository.AventuraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AventuraViewModel (application: Application, idJugador: Int) : AndroidViewModel(application) {
+class AventuraViewModel (application: Application, private val idJugador: Int) : AndroidViewModel(application) {
 
     val listaAventuras : LiveData<List<Aventura>>
 

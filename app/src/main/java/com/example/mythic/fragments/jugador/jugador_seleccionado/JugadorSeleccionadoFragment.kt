@@ -1,6 +1,7 @@
 package com.example.mythic.fragments.jugador.jugador_seleccionado
 
 import android.app.AlertDialog
+import android.app.Application
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -41,8 +42,9 @@ class JugadorSeleccionadoFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
-        mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+
+        mAventuraViewModel = AventuraViewModel(Application(),args.jugadorActual.id)
+
 
         view.nombre_jugador.setText(args.jugadorActual.nombre)
         if(args.jugadorActual.masterHumano == true){
@@ -60,7 +62,7 @@ class JugadorSeleccionadoFragment : Fragment() {
         }else{
             view.motor_juego.setText("Motor de juego: Mythic")
         }
-        val listaAventurasJugadorSeleccionado = listaAventurasAdapter.obtenerlistaAventurasJugadorSeleccionado()
+
         mAventuraViewModel.listaAventuras.observe(viewLifecycleOwner, Observer { aventura ->
             listaAventurasAdapter.establecerDatos(aventura)
             //************************************************************************************
@@ -69,7 +71,7 @@ class JugadorSeleccionadoFragment : Fragment() {
 
 
             //Comprobar si hay alguna aventura creada con la id del Jugador
-            if(listaAventurasJugadorSeleccionado.size == 0){
+            if(listaAventurasAdapter.getItemCount() == 0){
                 //Mostrar mensaje de Crear Aventura
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Tu Jugador no tiene ninguna Aventura creada.")
