@@ -17,6 +17,7 @@ import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugador
 import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 import com.example.mythic.model.Aventura
 import com.example.mythic.viewmodel.AventuraViewModel
+import com.example.mythic.viewmodel.AventuraViewModelFactory
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.floatingActionButton
@@ -42,8 +43,8 @@ class JugadorSeleccionadoFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
-
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+        val aventuraViewModelFactory = AventuraViewModelFactory(args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this,aventuraViewModelFactory).get(AventuraViewModel::class.java)
 
 
         view.nombre_jugador.setText(args.jugadorActual.nombre)

@@ -1,9 +1,7 @@
 package com.example.mythic.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.mythic.data.aventura.AventuraBD
 import com.example.mythic.data.aventura.AventuraDao
 import com.example.mythic.model.Aventura
@@ -12,7 +10,7 @@ import com.example.mythic.repository.AventuraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AventuraViewModel (application: Application, private val idJugador: Int) : AndroidViewModel(application) {
+class AventuraViewModel (application: Application, val idJugador: Int) : AndroidViewModel(application) {
 
     val listaAventuras : LiveData<List<Aventura>>
 
@@ -56,4 +54,10 @@ class AventuraViewModel (application: Application, private val idJugador: Int) :
     }
 
 
+}
+
+class AventuraViewModelFactory(val idJugador: Int) : ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return modelClass.getConstructor(Int::class.java).newInstance(idJugador)
+    }
 }

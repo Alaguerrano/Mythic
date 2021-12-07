@@ -20,6 +20,7 @@ import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragme
 import com.example.mythic.model.Aventura
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
+import com.example.mythic.viewmodel.AventuraViewModelFactory
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 
@@ -35,7 +36,9 @@ class CrearAventuraFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_aventura, container, false)
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+
+        val aventuraViewModelFactory = AventuraViewModelFactory(args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this,aventuraViewModelFactory).get(AventuraViewModel::class.java)
 
         view.button.setOnClickListener {
 
