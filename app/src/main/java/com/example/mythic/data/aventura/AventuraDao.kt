@@ -19,4 +19,7 @@ interface AventuraDao {
 
     @Query("SELECT * FROM aventuras_tabla WHERE id =:idJugador")
     fun obtenerAventurasJugador(idJugador : Int): LiveData<List<Aventura>>
+
+    @Query("DELETE FROM aventuras_tabla WHERE idJugador =:idJugador")
+    fun borrarAventurasJugador(idJugador : Int)
 }

@@ -45,11 +45,9 @@ class AventuraViewModel (application: Application, idJugador: Int) : AndroidView
     }
 
     //TODO ver si funciona o hacerlo desde DAO con Query
-    fun borrarAventuras (aventuras : Array<Aventura>){
+    fun borrarAventurasJugador(){
         viewModelScope.launch(Dispatchers.IO) {
-            for(aventura in aventuras) {
-                repository.borrarAventura(aventura)
-            }
+            repository.borrarAventurasJugador(id)
         }
     }
 

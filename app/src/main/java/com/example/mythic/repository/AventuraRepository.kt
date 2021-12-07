@@ -20,4 +20,8 @@ class AventuraRepository(private val aventuraDao: AventuraDao, idJugador : Int) 
         aventuraDao.borrarAventura(aventura)
     }
 
+    suspend fun borrarAventurasJugador(idJugador : Int){
+        aventuraDao.borrarAventurasJugador(idJugador)
+    }
+
 }
