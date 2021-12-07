@@ -35,7 +35,7 @@ class CrearAventuraFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_aventura, container, false)
-        mAventuraViewModel = AventuraViewModel(Application(),args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
         view.button.setOnClickListener {
 

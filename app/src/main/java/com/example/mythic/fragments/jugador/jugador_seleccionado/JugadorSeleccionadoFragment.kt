@@ -43,7 +43,7 @@ class JugadorSeleccionadoFragment : Fragment() {
 
 
 
-        mAventuraViewModel = AventuraViewModel(Application(),args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
 
         view.nombre_jugador.setText(args.jugadorActual.nombre)
