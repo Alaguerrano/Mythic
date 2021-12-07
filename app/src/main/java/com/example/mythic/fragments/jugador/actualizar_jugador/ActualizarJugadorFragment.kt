@@ -13,6 +13,7 @@ import com.example.mythic.R
 import com.example.mythic.fragments.aventura.ListaAventurasAdapter
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
+import com.example.mythic.viewmodel.AventuraViewModelFactory
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
@@ -22,6 +23,7 @@ class ActualizarJugadorFragment : Fragment() {
 
     private lateinit var mJugadorViewModel: JugadorViewModel
     private lateinit var mAventuraViewModel: AventuraViewModel
+    private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
 
     private val args by navArgs<ActualizarJugadorFragmentArgs>()
 
@@ -35,7 +37,8 @@ class ActualizarJugadorFragment : Fragment() {
 
 
 
-        mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
+        mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
+        mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
         view.actualizar_master_humano_sw.setChecked(args.jugadorActual.masterHumano)
