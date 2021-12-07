@@ -92,7 +92,7 @@ class ActualizarJugadorFragment : Fragment() {
             mJugadorViewModel.borrarJugador(args.jugadorActual)
             val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
 
-            mAventuraViewModel.borrarAventuras(listaAventurasAdapter.obtenerArrayAventuras())
+            mAventuraViewModel.borrarAventurasJugador()
             Toast.makeText(requireContext(), "Perfil de Jugador borrado: ${args.jugadorActual.nombre}", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_actualizarJugadorFragment_to_listaJugadoresFragment)
 
