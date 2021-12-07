@@ -34,7 +34,7 @@ class ActualizarJugadorFragment : Fragment() {
 
 
 
-        mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
+
         mAventuraViewModel = ViewModelProvider(this).get(AventuraViewModel::class.java)
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
@@ -88,8 +88,8 @@ class ActualizarJugadorFragment : Fragment() {
         builder.setPositiveButton("Si"){_,_ ->
             mJugadorViewModel.borrarJugador(args.jugadorActual)
             val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
-            val listaAventurasJugadorSeleccionado = listaAventurasAdapter.obtenerlistaAventurasJugadorSeleccionado()
-            mAventuraViewModel.borrarAventuras(listaAventurasJugadorSeleccionado)
+
+            mAventuraViewModel.borrarAventuras(listaAventurasAdapter.obtenerArrayAventuras())
             Toast.makeText(requireContext(), "Perfil de Jugador borrado: ${args.jugadorActual.nombre}", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_actualizarJugadorFragment_to_listaJugadoresFragment)
 
