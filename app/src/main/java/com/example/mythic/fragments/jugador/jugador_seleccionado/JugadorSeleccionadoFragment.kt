@@ -3,6 +3,7 @@ package com.example.mythic.fragments.jugador.jugador_seleccionado
 import android.app.AlertDialog
 import android.app.Application
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -49,21 +50,21 @@ class JugadorSeleccionadoFragment : Fragment() {
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
 
-        view.nombre_jugador.setText("Nombre del Jugador: " + args.jugadorActual.nombre)
+        view.nombre_jugador.setText(Html.fromHtml("<b>Nombre del Jugador:</b> " + args.jugadorActual.nombre))
         if(args.jugadorActual.masterHumano == true){
-            view.tipo_master.setText("Master: Humano")
+            view.tipo_master.setText(Html.fromHtml("<b>Master:</b> Humano"))
         }else{
-            view.tipo_master.setText("Master: Mythic")
+            view.tipo_master.setText(Html.fromHtml("<b>Master:</b> Mythic"))
         }
         if(args.jugadorActual.multijugador == true){
-            view.numero_jugadores.setText("Partida multijugador")
+            view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> Multijugador"))
         }else{
-            view.numero_jugadores.setText("Partida en solitario")
+            view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> Solitario"))
         }
         if(args.jugadorActual.motorDistintoMythic == true){
-            view.motor_juego.setText("Motor de juego: distinto a Mythic")
+            view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> Distinto a Mythic"))
         }else{
-            view.motor_juego.setText("Motor de juego: Mythic")
+            view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> Mythic"))
         }
 
         mAventuraViewModel.listaAventuras.observe(viewLifecycleOwner, Observer { aventura ->

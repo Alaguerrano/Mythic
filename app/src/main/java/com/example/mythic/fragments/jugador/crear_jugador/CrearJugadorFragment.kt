@@ -72,7 +72,10 @@ class CrearJugadorFragment : Fragment() {
 
 
         } else {
-            Toast.makeText(requireContext(), "Rellena todos los campos", Toast.LENGTH_LONG).show()
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Campo de nombre vacio")
+            builder.setMessage("Debes rellenar todos los campos para crear un nuevo perfil.")
+            builder.create().show()
         }
 
     }

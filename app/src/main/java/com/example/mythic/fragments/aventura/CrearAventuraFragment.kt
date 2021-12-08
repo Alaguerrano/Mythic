@@ -52,12 +52,13 @@ class CrearAventuraFragment : Fragment() {
     private fun insertarDatos() {
 
         val nombre = nombre_et.text.toString()
+        val premisa = premisa_et.text.toString()
 
         if (comprobarCampos(nombre)) {
             if(comprobarNombre(nombre))
             {
                 Log.e("ID Jugador Actual", args.jugadorActual.id.toString())
-                val aventura = Aventura(0,args.jugadorActual.id,nombre,"Premisa sin hacer", 5)
+                val aventura = Aventura(0,args.jugadorActual.id,nombre,premisa, 5)
                 mAventuraViewModel.crearAventura(aventura)
                 Toast.makeText(requireContext(), "Aventura creada", Toast.LENGTH_LONG).show()
 

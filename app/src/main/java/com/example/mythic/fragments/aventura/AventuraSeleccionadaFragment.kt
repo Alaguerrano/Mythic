@@ -1,6 +1,7 @@
 package com.example.mythic.fragments.aventura
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +23,8 @@ class AventuraSeleccionadaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_aventura_seleccionada, container, false)
-        view.nombre_aventura.setText("Nombre de la Aventura: " + args.aventuraSeleccionada.nombre)
+        view.nombre_aventura.setText(Html.fromHtml("<b>Nombre de la Aventura:</b> " + args.aventuraSeleccionada.nombre))
+        view.premisa_aventura.setText(Html.fromHtml("<b>Premisa de la Aventura:</b> " + args.aventuraSeleccionada.premisa))
         return view
     }
 

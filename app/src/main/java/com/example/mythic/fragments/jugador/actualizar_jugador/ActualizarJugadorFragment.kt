@@ -7,10 +7,12 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.aventura.ListaAventurasAdapter
+import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory
@@ -35,7 +37,7 @@ class ActualizarJugadorFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_actualizar_jugador, container, false)
 
 
-
+        mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
 
         mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
@@ -62,7 +64,8 @@ class ActualizarJugadorFragment : Fragment() {
             val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,masterHumano, multijugador,motorDistintoMythic)
             mJugadorViewModel.actualizarJugador(jugadorActualizado)
             Toast.makeText(requireContext(), "Perfil de Jugador actualizado", Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_actualizarJugadorFragment_to_listaJugadoresFragment)
+            val action = ActualizarJugadorFragmentDirections.actionActualizarJugadorFragmentToListaJugadoresFragment()
+            findNavController().navigate(action)
         }
         else
         {

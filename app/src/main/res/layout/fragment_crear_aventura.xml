@@ -23,6 +23,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/premisa_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#92E3ED"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="Premisa de la Aventura"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        android:text=""
+
+        android:textColor="#2C2B2B"
+        android:textColorHint="#635E5E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
+
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -31,6 +53,6 @@
         android:text="Crear Aventura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
+        app:layout_constraintTop_toBottomOf="@+id/premisa_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

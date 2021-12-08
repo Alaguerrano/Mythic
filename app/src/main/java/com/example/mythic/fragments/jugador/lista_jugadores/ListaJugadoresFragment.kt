@@ -47,8 +47,10 @@ class ListaJugadoresFragment : Fragment() {
             if(listaJugadoresAdapter.getItemCount() == 0) {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Perfiles de Jugador vacio")
-                builder.setMessage("Debes crear un Perfil de Jugador pulsando el botón +")
+                builder.setMessage("Debes crear un Perfil de Jugador para poder jugar")
                 builder.create().show()
+                val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(listaJugadoresAdapter.obtenerArrayJugadores())
+                findNavController().navigate(action)
             }
         })
 
