@@ -17,7 +17,7 @@ interface AventuraDao {
     @Delete
     fun borrarAventura(aventura: Aventura)
 
-    @Query("SELECT * FROM aventuras_tabla WHERE id =:idJugador")
+    @Query("SELECT * FROM aventuras_tabla WHERE idJugador =:idJugador")
     fun obtenerAventurasJugador(idJugador : Int): LiveData<List<Aventura>>
 
     @Query("DELETE FROM aventuras_tabla WHERE idJugador =:idJugador")

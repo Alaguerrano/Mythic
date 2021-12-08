@@ -3,6 +3,7 @@ package com.example.mythic.fragments.jugador.jugador_seleccionado
 import android.app.AlertDialog
 import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -48,7 +49,7 @@ class JugadorSeleccionadoFragment : Fragment() {
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
 
-        view.nombre_jugador.setText(args.jugadorActual.nombre)
+        view.nombre_jugador.setText("Nombre del Jugador: " + args.jugadorActual.nombre)
         if(args.jugadorActual.masterHumano == true){
             view.tipo_master.setText("Master: Humano")
         }else{
@@ -67,11 +68,12 @@ class JugadorSeleccionadoFragment : Fragment() {
 
         mAventuraViewModel.listaAventuras.observe(viewLifecycleOwner, Observer { aventura ->
             listaAventurasAdapter.establecerDatos(aventura)
+
             //************************************************************************************
             //Si la lista de Aventuras esta vacia, decir al usuario que cree una aventura
             //*******************************************************************************
 
-
+            Log.e("AVENTURAS JUGADOR:",mAventuraViewModel.listaAventuras.value?.size.toString())
             //Comprobar si hay alguna aventura creada con la id del Jugador
             if(listaAventurasAdapter.getItemCount() == 0){
                 //Mostrar mensaje de Crear Aventura
@@ -80,7 +82,7 @@ class JugadorSeleccionadoFragment : Fragment() {
                 builder.setMessage("Debes crear al menos una aventura en tu Perfil de Jugador, para poder jugar.")
                 builder.create().show()
                 //Mandarlo a pantalla crear una Aventura
-                val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual)
+                val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
                 findNavController().navigate(action)
             }
 
@@ -92,7 +94,7 @@ class JugadorSeleccionadoFragment : Fragment() {
         //Cuando pulsas el botón + te manda a Crear una nueva Aventura
         //*********************************************************************
         view.floatingActionButton.setOnClickListener{
-            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual)
+            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
             findNavController().navigate(action)
 
         }

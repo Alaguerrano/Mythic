@@ -21,7 +21,9 @@ import com.example.mythic.model.Aventura
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory
+import kotlinx.android.synthetic.main.fragment_crear_aventura.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
+import kotlinx.android.synthetic.main.fragment_crear_jugador.nombre_et
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 
 
@@ -81,18 +83,22 @@ class CrearAventuraFragment : Fragment() {
         return !(TextUtils.isEmpty(nombre))
     }
     private fun comprobarNombre(nombre: String): Boolean{
-        val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
 
-        if (listaAventurasAdapter.getItemCount() != 0) {
-            Log.e("Lista Aventuras Jugador tamaño:", "Distinto de cero")
-            for (aventura in listaAventurasAdapter.obtenerArrayAventuras()){
+
+
+        if (args.listaAventuras.size != 0) {
+
+            for (aventura in args.listaAventuras){
                 Log.e("NOMBRE", aventura.nombre)
                 if(aventura.nombre == nombre){
                     return false
                 }
             }
+        }else
+        {
+            Log.e("COMPROBAR NOMBRE", "Lista nula")
         }
-        Log.e("COMPROBAR NOMBRE", "Lista nula")
+
         return true
     }
 

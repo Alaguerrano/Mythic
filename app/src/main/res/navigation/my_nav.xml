@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_jugadorSeleccionadoFragment_to_crearAventuraFragment"
             app:destination="@id/crearAventuraFragment" />
+        <action
+            android:id="@+id/action_jugadorSeleccionadoFragment_to_aventuraSeleccionadaFragment"
+            app:destination="@id/aventuraSeleccionadaFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearAventuraFragment"
@@ -71,5 +74,17 @@
         <action
             android:id="@+id/action_crearAventuraFragment_to_jugadorSeleccionadoFragment"
             app:destination="@id/jugadorSeleccionadoFragment" />
+        <argument
+            android:name="listaAventuras"
+            app:argType="com.example.mythic.model.Aventura[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/aventuraSeleccionadaFragment"
+        android:name="com.example.mythic.fragments.aventura.AventuraSeleccionadaFragment"
+        android:label="Aventura seleccionada:"
+        tools:layout="@layout/fragment_aventura_seleccionada" >
+        <argument
+            android:name="aventuraSeleccionada"
+            app:argType="com.example.mythic.model.Aventura" />
     </fragment>
 </navigation>

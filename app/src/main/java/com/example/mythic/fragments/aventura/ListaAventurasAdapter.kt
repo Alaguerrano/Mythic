@@ -4,9 +4,12 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
+import com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragmentDirections
+import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 
 import com.example.mythic.model.Aventura
 
@@ -17,7 +20,7 @@ class ListaAventurasAdapter(idJugador : Int): RecyclerView.Adapter<ListaAventura
 
     //Todas las aventuras
     private var aventurasLista = emptyList<Aventura>()
-    private var idJugadorSeleccionado = idJugador
+
 
     class MiViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
@@ -38,7 +41,8 @@ class ListaAventurasAdapter(idJugador : Int): RecyclerView.Adapter<ListaAventura
 
         //Si pulso en una aventura para actualizarla
         holder.itemView.filaLayout.setOnClickListener{
-           //TODO
+            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToAventuraSeleccionadaFragment(aventuraActual)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
