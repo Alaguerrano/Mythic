@@ -12,11 +12,13 @@ data class Personaje(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val idJugador : Int,
+    val estaEnAventura: Boolean,
+    val idAventura : Int,
     val esPJ : Boolean,
     val esNPJ : Boolean,
     val esPJLibre : Boolean,
     val esPJPuntos : Boolean,
     val nombre : String,
     val resumen : String,
-    val favor : Int
+    val puntosFavor : Int
 ): Parcelable
