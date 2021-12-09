@@ -74,7 +74,10 @@ class CrearAventuraFragment : Fragment() {
 
 
         } else {
-            Toast.makeText(requireContext(), "Rellena todos los campos", Toast.LENGTH_LONG).show()
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Campos por rellenar")
+            builder.setMessage("Debes rellenar todos los campos para crear la Aventura.")
+            builder.create().show()
         }
 
     }
