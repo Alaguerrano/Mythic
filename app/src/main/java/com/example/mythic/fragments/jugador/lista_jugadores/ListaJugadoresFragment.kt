@@ -38,8 +38,12 @@ class ListaJugadoresFragment : Fragment() {
         recyclerView.adapter = listaJugadoresAdapter
 
         //Añade una division en la lista horizontal
-        val itemDecoration : DividerItemDecoration = DividerItemDecoration(recyclerView.context, 0)
-        recyclerView.addItemDecoration(itemDecoration)
+        recyclerView.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                LinearLayoutManager.HORIZONTAL
+            )
+        )
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
