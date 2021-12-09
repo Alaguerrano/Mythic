@@ -44,6 +44,14 @@
         app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_personajes_rv"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premisa_et"/>
 
     <Button
         android:id="@+id/button"
@@ -53,6 +61,6 @@
         android:text="Crear Aventura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/premisa_et" />
+        app:layout_constraintTop_toBottomOf="@+id/lista_personajes_rv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
