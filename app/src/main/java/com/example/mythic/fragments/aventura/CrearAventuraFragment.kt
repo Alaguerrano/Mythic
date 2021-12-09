@@ -54,7 +54,7 @@ class CrearAventuraFragment : Fragment() {
         val nombre = nombre_et.text.toString()
         val premisa = premisa_et.text.toString()
 
-        if (comprobarCampos(nombre)) {
+        if (comprobarCampos(nombre, premisa)) {
             if(comprobarNombre(nombre))
             {
                 Log.e("ID Jugador Actual", args.jugadorActual.id.toString())
@@ -80,8 +80,8 @@ class CrearAventuraFragment : Fragment() {
     }
 
     //Comprueba si todos los campos del formulario están llenos
-    private fun comprobarCampos(nombre: String): Boolean {
-        return !(TextUtils.isEmpty(nombre))
+    private fun comprobarCampos(nombre: String, premisa: String): Boolean {
+        return !(TextUtils.isEmpty(nombre))&&!(TextUtils.isEmpty(premisa))
     }
     private fun comprobarNombre(nombre: String): Boolean{
 

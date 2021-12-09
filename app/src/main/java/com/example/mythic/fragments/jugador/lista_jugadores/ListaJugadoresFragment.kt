@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.mythic.R
@@ -35,6 +36,11 @@ class ListaJugadoresFragment : Fragment() {
 
         val recyclerView = view.recyclerView
         recyclerView.adapter = listaJugadoresAdapter
+
+        //Añade una division en la lista horizontal
+        val itemDecoration : DividerItemDecoration = DividerItemDecoration(recyclerView.context, 0)
+        recyclerView.addItemDecoration(itemDecoration)
+
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
