@@ -51,6 +51,16 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numero_jugadores" />
+    <LinearLayout
+        android:id="@+id/linea"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/motor_juego" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -69,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/motor_juego"
+        app:layout_constraintTop_toBottomOf="@+id/linea"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -90,7 +100,7 @@
         android:clickable="true"
         android:src="@drawable/ic_pjs"
         app:layout_constraintStart_toEndOf="@+id/aventuras_bt"
-        app:layout_constraintTop_toBottomOf="@+id/motor_juego"
+        app:layout_constraintTop_toBottomOf="@+id/linea"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
