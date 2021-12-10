@@ -47,10 +47,6 @@ class CrearAventuraFragment : Fragment() {
         if(args.jugadorActual.motorDistintoMythic == false){
             //MODO SOLITARIO
             if(args.jugadorActual.multijugador == false){
-                //Comprobar si el jugador seleccionado tiene personajes creados sin asignar a partidas
-            }
-            //MODO MULTIJUGADOR
-            else{
 
             }
         }

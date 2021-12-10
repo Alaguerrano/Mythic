@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.mythic.R
 
 
-class CrearPersonajeFragment : Fragment() {
+class CrearPJFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class CrearPersonajeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_crear_personaje, container, false)
+        val view = inflater.inflate(R.layout.fragment_crear_pj, container, false)
         return view
     }
 
