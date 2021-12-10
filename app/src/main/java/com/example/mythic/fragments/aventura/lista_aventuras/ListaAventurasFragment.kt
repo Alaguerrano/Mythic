@@ -24,7 +24,7 @@ class ListaAventurasFragment : Fragment() {
 
     private lateinit var mAventuraViewModel: AventuraViewModel
     private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
-    private val args by navArgs<JugadorSeleccionadoFragmentArgs>()
+    private val args by navArgs<ListaAventurasFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +57,8 @@ class ListaAventurasFragment : Fragment() {
                 builder.setMessage("Debes crear al menos una aventura en tu Perfil de Jugador, para poder jugar.")
                 builder.create().show()
                 //Mandarlo a pantalla crear una Aventura
-                val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
+                val action = ListaAventurasFragmentDirections.actionListaAventurasFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
+
                 findNavController().navigate(action)
             }
 
