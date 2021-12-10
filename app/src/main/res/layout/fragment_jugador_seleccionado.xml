@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Jugador:"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +24,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Tipo de Master:"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +35,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Numero jugadores:"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +46,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Motor de juego:"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,19 +62,51 @@
         app:layout_constraintTop_toBottomOf="@+id/motor_juego" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/aventuras_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
         android:layout_marginBottom="36dp"
         android:backgroundTint="#D25DE6"
         android:clickable="true"
         android:contentDescription="TODO"
         android:focusable="true"
-        android:src="@drawable/ic_add"
-        android:tint="@color/white"
+        android:src="@drawable/ic_aventuras"
 
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lista_aventuras_rv"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aventuras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aventuras_bt" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/PJs_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:src="@drawable/ic_pjs"
+        app:layout_constraintStart_toEndOf="@+id/aventuras_bt"
+        app:layout_constraintTop_toBottomOf="@+id/lista_aventuras_rv"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="PJs"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/PJs_bt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

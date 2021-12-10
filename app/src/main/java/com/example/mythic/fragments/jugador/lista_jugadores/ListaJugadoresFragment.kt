@@ -71,7 +71,7 @@ class ListaJugadoresFragment : Fragment() {
         //********************************************************************
         //Cuando pulsas el botón + te manda a Crear un nuevo Perfil de Jugador
         //*********************************************************************
-        view.floatingActionButton.setOnClickListener{
+        view.aventuras_bt.setOnClickListener{
             val action = ListaJugadoresFragmentDirections.actionListaJugadoresFragmentToCrearJugadorFragment(listaJugadoresAdapter.obtenerArrayJugadores())
             findNavController().navigate(action)
 
