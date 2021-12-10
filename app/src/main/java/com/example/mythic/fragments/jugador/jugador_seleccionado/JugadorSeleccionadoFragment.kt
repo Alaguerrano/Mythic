@@ -1,20 +1,12 @@
 package com.example.mythic.fragments.jugador.jugador_seleccionado
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mythic.R
-import com.example.mythic.fragments.aventura.ListaAventurasAdapter
-import com.example.mythic.viewmodel.AventuraViewModel
-import com.example.mythic.viewmodel.AventuraViewModelFactory
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.aventuras_bt
 

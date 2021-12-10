@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.aventura
+package com.example.mythic.fragments.aventura.aventura_seleccionada
 
 import android.os.Bundle
 import android.text.Html
@@ -8,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
-import com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragmentArgs
 import kotlinx.android.synthetic.main.fragment_aventura_seleccionada.view.*
-import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 
 
 class AventuraSeleccionadaFragment : Fragment() {

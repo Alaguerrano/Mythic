@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.aventura.CrearAventuraFragment">
+    tools:context=".fragments.aventura.crear_aventura.CrearAventuraFragment">
     <EditText
         android:id="@+id/nombre_et"
         android:layout_width="300dp"

@@ -7,12 +7,10 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
-import com.example.mythic.fragments.aventura.ListaAventurasAdapter
-import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
+import com.example.mythic.fragments.aventura.lista_aventuras.ListaAventurasAdapter
 import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory

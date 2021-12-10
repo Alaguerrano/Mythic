@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/crearAventuraFragment"
-        android:name="com.example.mythic.fragments.aventura.CrearAventuraFragment"
+        android:name="com.example.mythic.fragments.aventura.crear_aventura.CrearAventuraFragment"
         android:label="Crear Aventura"
         tools:layout="@layout/fragment_crear_aventura" >
         <argument
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/aventuraSeleccionadaFragment"
-        android:name="com.example.mythic.fragments.aventura.AventuraSeleccionadaFragment"
+        android:name="com.example.mythic.fragments.aventura.aventura_seleccionada.AventuraSeleccionadaFragment"
         android:label="Aventura seleccionada:"
         tools:layout="@layout/fragment_aventura_seleccionada" >
         <argument
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/listaAventurasFragment"
-        android:name="com.example.mythic.fragments.aventura.ListaAventurasFragment"
+        android:name="com.example.mythic.fragments.aventura.lista_aventuras.ListaAventurasFragment"
         android:label="Lista de Aventuras"
         tools:layout="@layout/fragment_lista_aventuras" >
         <action

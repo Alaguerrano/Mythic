@@ -1,7 +1,6 @@
-package com.example.mythic.fragments.aventura
+package com.example.mythic.fragments.aventura.crear_aventura
 
 import android.app.AlertDialog
-import android.app.Application
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -11,18 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
-import com.example.mythic.fragments.jugador.crear_jugador.CrearJugadorFragmentArgs
-import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 import com.example.mythic.model.Aventura
-import com.example.mythic.model.Jugador
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory
 import kotlinx.android.synthetic.main.fragment_crear_aventura.*
-import kotlinx.android.synthetic.main.fragment_crear_jugador.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.nombre_et
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 

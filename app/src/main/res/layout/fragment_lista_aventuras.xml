@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.aventura.ListaAventurasFragment">
+    tools:context=".fragments.aventura.lista_aventuras.ListaAventurasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_aventuras_rv"

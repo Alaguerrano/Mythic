@@ -1,4 +1,4 @@
-package com.example.mythic.fragments.aventura
+package com.example.mythic.fragments.aventura.lista_aventuras
 
 import android.app.AlertDialog
 import android.os.Bundle
