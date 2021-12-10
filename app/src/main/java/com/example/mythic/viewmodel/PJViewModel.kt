@@ -10,41 +10,50 @@ import com.example.mythic.data.personaje.PersonajeDao
 import com.example.mythic.model.Jugador
 import com.example.mythic.model.Personaje
 
-import com.example.mythic.repository.PersonajeRepository
+import com.example.mythic.repository.PJRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PersonajeViewModel (application: Application) : AndroidViewModel(application) {
+class PJViewModel (application: Application, idJugador: Int) : AndroidViewModel(application) {
 
-    val listaPersonajes : LiveData<List<Personaje>>
+    val listaPJSinAventura : LiveData<List<Personaje>>
 
 
-    private val repository : PersonajeRepository
+
+    private val repository : PJRepository
     public val personajeDao : PersonajeDao
 
     init{
         personajeDao = PersonajeBD.obtenerBD(application).personajeDao()
-        repository = PersonajeRepository(personajeDao)
-        listaPersonajes = repository.listaPersonajes
+        repository = PJRepository(personajeDao, idJugador)
+        listaPJSinAventura = repository.listaPJSinAventura
 
 
     }
 
-    fun crearPersonaje (personaje: Personaje){
+    fun crearPJ (personaje: Personaje){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.crearPersonaje(personaje)
+            repository.crearPJ(personaje)
         }
     }
 
-    fun actualizarPersonaje (personaje: Personaje){
+    fun actualizarPJ (personaje: Personaje){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.actualizarPersonaje(personaje)
+            repository.actualizarPJ(personaje)
         }
     }
 
-    fun borrarPersonaje (personaje: Personaje){
+    fun borrarPJ (personaje: Personaje){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.borrarPersonaje(personaje)
+            repository.borrarPJ(personaje)
         }
     }
+
+    fun borrarPJs (idJugador: Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.borrarPJs(idJugador)
+        }
+    }
+
+
 }

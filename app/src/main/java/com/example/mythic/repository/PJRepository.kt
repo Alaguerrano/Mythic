@@ -2,6 +2,7 @@ package com.example.mythic.repository
 
 import androidx.lifecycle.LiveData
 import com.example.mythic.data.personaje.PersonajeDao
+import com.example.mythic.model.Jugador
 import com.example.mythic.model.Personaje
 
 class PJRepository(private val personajeDao: PersonajeDao, idJugador : Int) {
@@ -19,6 +20,11 @@ class PJRepository(private val personajeDao: PersonajeDao, idJugador : Int) {
 
     suspend fun borrarPJ (personaje: Personaje){
         personajeDao.borrarPersonaje(personaje)
+    }
+
+    suspend fun borrarPJs (idJugador: Int){
+        personajeDao.borrarPJs(idJugador)
+
     }
 
 

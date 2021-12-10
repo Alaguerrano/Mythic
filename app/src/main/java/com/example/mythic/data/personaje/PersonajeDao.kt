@@ -21,4 +21,7 @@ interface PersonajeDao {
 
     @Query("SELECT * FROM personajes_tabla ORDER BY id ASC")
     fun obtenerPersonajes(): LiveData<List<Personaje>>
+
+    @Query("DELETE FROM personajes_tabla WHERE idJugador =:idJugador AND esPJ= 1")
+    fun borrarPJs(idJugador: Int)
 }
