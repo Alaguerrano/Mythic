@@ -22,8 +22,7 @@ import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.aventur
 class JugadorSeleccionadoFragment : Fragment() {
 
 
-    private lateinit var mAventuraViewModel: AventuraViewModel
-    private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
+
     private val args by navArgs<JugadorSeleccionadoFragmentArgs>()
 
     override fun onCreateView(
@@ -33,14 +32,9 @@ class JugadorSeleccionadoFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_jugador_seleccionado, container, false)
 
-        val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
-        val recyclerView = view.lista_aventuras_rv
-        recyclerView.adapter = listaAventurasAdapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
-        mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
-        mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
+
 
 
         view.nombre_jugador.setText(Html.fromHtml("<b>Nombre del Jugador:</b> " + args.jugadorActual.nombre))
@@ -60,35 +54,14 @@ class JugadorSeleccionadoFragment : Fragment() {
             view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> Mythic"))
         }
 
-        mAventuraViewModel.listaAventuras.observe(viewLifecycleOwner, Observer { aventura ->
-            listaAventurasAdapter.establecerDatos(aventura)
 
-            //************************************************************************************
-            //Si la lista de Aventuras esta vacia, decir al usuario que cree una aventura
-            //*******************************************************************************
-
-            Log.e("AVENTURAS JUGADOR:",mAventuraViewModel.listaAventuras.value?.size.toString())
-            //Comprobar si hay alguna aventura creada con la id del Jugador
-            if(listaAventurasAdapter.getItemCount() == 0){
-                //Mostrar mensaje de Crear Aventura
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setTitle("Tu Jugador no tiene ninguna Aventura creada.")
-                builder.setMessage("Debes crear al menos una aventura en tu Perfil de Jugador, para poder jugar.")
-                builder.create().show()
-                //Mandarlo a pantalla crear una Aventura
-                val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
-                findNavController().navigate(action)
-            }
-
-
-        })
         setHasOptionsMenu(true)
 
         //********************************************************************
-        //Cuando pulsas el botón + te manda a Crear una nueva Aventura
+        //Cuando pulsas el botón Aventuras, ir a Lista de Aventuras
         //*********************************************************************
         view.aventuras_bt.setOnClickListener{
-            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
+            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToListaAventurasFragment(args.jugadorActual)
             findNavController().navigate(action)
 
         }

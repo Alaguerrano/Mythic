@@ -90,10 +90,13 @@
     <fragment
         android:id="@+id/listaAventurasFragment"
         android:name="com.example.mythic.fragments.aventura.ListaAventurasFragment"
-        android:label="fragment_lista_aventuras"
+        android:label="Lista de Aventuras"
         tools:layout="@layout/fragment_lista_aventuras" >
         <action
             android:id="@+id/action_listaAventurasFragment_to_aventuraSeleccionadaFragment"
             app:destination="@id/aventuraSeleccionadaFragment" />
+        <argument
+            android:name="jugadorActual"
+            app:argType="com.example.mythic.model.Jugador" />
     </fragment>
 </navigation>
