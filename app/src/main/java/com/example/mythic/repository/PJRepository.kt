@@ -4,22 +4,21 @@ import androidx.lifecycle.LiveData
 import com.example.mythic.data.personaje.PersonajeDao
 import com.example.mythic.model.Personaje
 
-class PersonajeRepository(private val personajeDao: PersonajeDao) {
-    val listaPersonajes : LiveData<List<Personaje>> = personajeDao.obtenerPersonajes()
+class PJRepository(private val personajeDao: PersonajeDao, idJugador : Int) {
+    val listaPJSinAventura : LiveData<List<Personaje>> = personajeDao.obtenerPJSinAventura(idJugador)
 
 
 
-    suspend fun crearPersonaje (personaje: Personaje){
+    suspend fun crearPJ (personaje: Personaje){
         personajeDao.crearPersonaje(personaje)
     }
 
-    suspend fun actualizarPersonaje (personaje: Personaje){
+    suspend fun actualizarPJ (personaje: Personaje){
         personajeDao.actualizarPersonaje(personaje)
     }
 
-    suspend fun borrarPersonaje (personaje: Personaje){
+    suspend fun borrarPJ (personaje: Personaje){
         personajeDao.borrarPersonaje(personaje)
-
     }
 
 
