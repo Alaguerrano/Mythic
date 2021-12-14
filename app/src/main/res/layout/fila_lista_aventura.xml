@@ -5,15 +5,28 @@
     android:layout_height="wrap_content"
     android:padding="24sp"
     android:id="@+id/filaLayout">
+
+    <LinearLayout
+        android:id="@+id/linea_superior"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/nombre_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="17dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#90D0F3"
         android:text="Prueba"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linea_superior" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

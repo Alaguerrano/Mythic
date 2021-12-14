@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/jugadorSeleccionadoFragment"
         android:name="com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragment"
-        android:label="Perfil de Jugador seleccionado"
+        android:label="Jugador seleccionado:"
         tools:layout="@layout/fragment_jugador_seleccionado" >
         <argument
             android:name="jugadorActual"
