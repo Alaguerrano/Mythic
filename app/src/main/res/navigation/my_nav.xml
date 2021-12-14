@@ -88,7 +88,7 @@
             app:argType="com.example.mythic.model.Aventura" />
         <action
             android:id="@+id/action_aventuraSeleccionadaFragment_to_actualziarAventuraFragment"
-            app:destination="@id/actualziarAventuraFragment" />
+            app:destination="@id/actualizarAventuraFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaAventurasFragment"
