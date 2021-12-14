@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.mythic.R
 
 
-class ActualziarAventuraFragment : Fragment() {
+class ActualizarAventuraFragment : Fragment() {
 
 
     override fun onCreateView(

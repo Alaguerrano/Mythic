@@ -111,8 +111,8 @@
         android:label="Crear PJ"
         tools:layout="@layout/fragment_crear_pj" />
     <fragment
-        android:id="@+id/actualziarAventuraFragment"
-        android:name="com.example.mythic.fragments.aventura.ActualziarAventuraFragment"
+        android:id="@+id/actualizarAventuraFragment"
+        android:name="com.example.mythic.fragments.aventura.ActualizarAventuraFragment"
         android:label="fragment_actualizar_aventura"
         tools:layout="@layout/fragment_actualizar_aventura" />
 </navigation>
