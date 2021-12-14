@@ -16,12 +16,12 @@ interface PersonajeDao {
     @Delete
     fun borrarPersonaje(personaje: Personaje)
 
-    @Query("SELECT * FROM personajes_tabla WHERE idJugador =:idJugador AND estaEnAventura= 0 AND esPJ= 1")
+    @Query("SELECT * FROM personajes_tabla WHERE idJugador =:idJugador AND idAventura= -1 AND esNPJ= 0")
     fun obtenerPJSinAventura(idJugador : Int): LiveData<List<Personaje>>
 
     @Query("SELECT * FROM personajes_tabla ORDER BY id ASC")
     fun obtenerPersonajes(): LiveData<List<Personaje>>
 
-    @Query("DELETE FROM personajes_tabla WHERE idJugador =:idJugador AND esPJ= 1")
+    @Query("DELETE FROM personajes_tabla WHERE idJugador =:idJugador AND esNPJ= 0")
     fun borrarPJs(idJugador: Int)
 }
