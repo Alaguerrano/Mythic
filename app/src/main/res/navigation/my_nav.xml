@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_jugadorSeleccionadoFragment_to_listaAventurasFragment"
             app:destination="@id/listaAventurasFragment" />
+        <action
+            android:id="@+id/action_jugadorSeleccionadoFragment_to_crearPJFragment"
+            app:destination="@id/crearPJFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearAventuraFragment"
@@ -99,4 +102,9 @@
             android:id="@+id/action_listaAventurasFragment_to_crearAventuraFragment"
             app:destination="@id/crearAventuraFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/crearPJFragment"
+        android:name="com.example.mythic.fragments.personaje.CrearPJFragment"
+        android:label="Crear PJ"
+        tools:layout="@layout/fragment_crear_pj" />
 </navigation>
