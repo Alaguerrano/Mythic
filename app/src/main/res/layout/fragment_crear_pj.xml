@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.personaje.CrearPJFragment">
+    <EditText
+        android:id="@+id/nombre_et"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#92E3ED"
+        android:ems="10"
+        android:hint="Nombre del PJ"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#2C2B2B"
+        android:textColorHint="#635E5E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/resumen_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#92E3ED"
+        android:ems="10"
+        android:hint="Resumen del PJ"
+        android:importantForAutofill="no"
 
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+
+        android:text=""
+        android:textColor="#2C2B2B"
+        android:textColorHint="#635E5E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

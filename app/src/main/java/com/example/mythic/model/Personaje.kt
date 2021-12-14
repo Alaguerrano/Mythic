@@ -12,11 +12,11 @@ data class Personaje(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val idJugador : Int,
-    val estaEnAventura: Boolean,
+    //si idAventura -1 no esta en ninguna aventura
     val idAventura : Int,
-    val esPJ : Boolean,
+    //si no es NPJ es PJ
     val esNPJ : Boolean,
-    val esPJLibre : Boolean,
+    //si no es PJPuntos, es PJ Libre
     val esPJPuntos : Boolean,
     val nombre : String,
     val resumen : String,
