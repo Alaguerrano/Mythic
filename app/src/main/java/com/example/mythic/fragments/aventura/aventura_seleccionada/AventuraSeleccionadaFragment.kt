@@ -2,12 +2,12 @@ package com.example.mythic.fragments.aventura.aventura_seleccionada
 
 import android.os.Bundle
 import android.text.Html
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
+import com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragmentDirections
 import kotlinx.android.synthetic.main.fragment_aventura_seleccionada.view.*
 
 
@@ -28,6 +28,23 @@ class AventuraSeleccionadaFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return view
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.editar_aventura_menu, menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.editar_menu) {
+            editarAventura()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun editarAventura() {
+        val action = AventuraSeleccionadaFragmentDirections.actionAventuraSeleccionadaFragmentToActualziarAventuraFragment()
+        findNavController().navigate(action)
+
     }
 
 
