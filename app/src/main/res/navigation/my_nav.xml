@@ -113,6 +113,6 @@
     <fragment
         android:id="@+id/actualizarAventuraFragment"
         android:name="com.example.mythic.fragments.aventura.ActualizarAventuraFragment"
-        android:label="fragment_actualizar_aventura"
+        android:label="Editar Aventura"
         tools:layout="@layout/fragment_actualizar_aventura" />
 </navigation>
