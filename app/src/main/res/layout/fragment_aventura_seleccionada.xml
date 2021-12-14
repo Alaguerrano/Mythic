@@ -26,5 +26,14 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre_aventura" />
+    <TextView
+        android:id="@+id/caos_aventura"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Caos:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premisa_aventura" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

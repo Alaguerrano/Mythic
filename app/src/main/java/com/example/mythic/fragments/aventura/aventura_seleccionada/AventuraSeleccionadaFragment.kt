@@ -23,6 +23,7 @@ class AventuraSeleccionadaFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_aventura_seleccionada, container, false)
         view.nombre_aventura.setText(Html.fromHtml("<b>Nombre de la Aventura:</b> " + args.aventuraSeleccionada.nombre))
         view.premisa_aventura.setText(Html.fromHtml("<b>Premisa de la Aventura:</b> " + args.aventuraSeleccionada.premisa))
+        view.caos_aventura.setText(Html.fromHtml("<b>Caos de la Aventura:</b> " + args.aventuraSeleccionada.caos))
         return view
     }
 
