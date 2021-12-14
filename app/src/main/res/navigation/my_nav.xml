@@ -86,6 +86,9 @@
         <argument
             android:name="aventuraSeleccionada"
             app:argType="com.example.mythic.model.Aventura" />
+        <action
+            android:id="@+id/action_aventuraSeleccionadaFragment_to_actualziarAventuraFragment"
+            app:destination="@id/actualziarAventuraFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaAventurasFragment"
@@ -107,4 +110,9 @@
         android:name="com.example.mythic.fragments.personaje.CrearPJFragment"
         android:label="Crear PJ"
         tools:layout="@layout/fragment_crear_pj" />
+    <fragment
+        android:id="@+id/actualziarAventuraFragment"
+        android:name="com.example.mythic.fragments.aventura.ActualziarAventuraFragment"
+        android:label="fragment_actualizar_aventura"
+        tools:layout="@layout/fragment_actualizar_aventura" />
 </navigation>
