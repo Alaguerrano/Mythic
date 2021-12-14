@@ -24,6 +24,9 @@ class AventuraSeleccionadaFragment : Fragment() {
         view.nombre_aventura.setText(Html.fromHtml("<b>Nombre de la Aventura:</b> " + args.aventuraSeleccionada.nombre))
         view.premisa_aventura.setText(Html.fromHtml("<b>Premisa de la Aventura:</b> " + args.aventuraSeleccionada.premisa))
         view.caos_aventura.setText(Html.fromHtml("<b>Caos de la Aventura:</b> " + args.aventuraSeleccionada.caos))
+
+        setHasOptionsMenu(true)
+
         return view
     }
 
