@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mythic.R
 import com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragmentArgs
 import com.example.mythic.fragments.jugador.jugador_seleccionado.JugadorSeleccionadoFragmentDirections
+import com.example.mythic.fragments.jugador.lista_jugadores.ListaJugadoresFragmentDirections
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory
 import kotlinx.android.synthetic.main.fragment_lista_aventuras.view.*
+import kotlinx.android.synthetic.main.fragment_lista_jugadores.view.*
 
 
 class ListaAventurasFragment : Fragment() {
@@ -64,6 +66,10 @@ class ListaAventurasFragment : Fragment() {
 
 
         })
+        view.crear_aventuras_bt.setOnClickListener{
+            val action = ListaAventurasFragmentDirections.actionListaAventurasFragmentToCrearAventuraFragment(args.jugadorActual, listaAventurasAdapter.obtenerArrayAventuras())
+            findNavController().navigate(action)
+        }
 
         return view
     }
