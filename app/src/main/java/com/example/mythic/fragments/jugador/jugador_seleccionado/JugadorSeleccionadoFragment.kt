@@ -60,7 +60,8 @@ class JugadorSeleccionadoFragment : Fragment() {
         }
 
         view.PJs_bt.setOnClickListener{
-
+            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToListaPJFragment(args.jugadorActual)
+            findNavController().navigate(action)
         }
 
 
