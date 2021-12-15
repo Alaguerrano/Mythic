@@ -60,7 +60,8 @@ class ListaPJFragment : Fragment() {
                 builder.setMessage("Debes crear al menos un PJ para poder jugar.")
                 builder.create().show()
                 //Mandarlo a pantalla crear una Aventura
-
+                val action = ListaPJFragmentDirections.actionListaPJFragmentToCrearPJFragment(args.jugadorActual, listaPJAdapter.obtenerArrayPJs())
+                findNavController().navigate(action)
             }
 
 

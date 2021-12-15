@@ -130,5 +130,8 @@
         <argument
             android:name="jugadorActual"
             app:argType="com.example.mythic.model.Jugador" />
+        <action
+            android:id="@+id/action_listaPJFragment_to_crearPJFragment"
+            app:destination="@id/crearPJFragment" />
     </fragment>
 </navigation>
