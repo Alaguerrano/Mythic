@@ -116,6 +116,9 @@
         <argument
             android:name="listaPJsJugador"
             app:argType="com.example.mythic.model.Personaje[]" />
+        <action
+            android:id="@+id/action_crearPJFragment_to_atributosFragment"
+            app:destination="@id/atributosFragment" />
     </fragment>
     <fragment
         android:id="@+id/actualizarAventuraFragment"
@@ -133,5 +136,14 @@
         <action
             android:id="@+id/action_listaPJFragment_to_crearPJFragment"
             app:destination="@id/crearPJFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atributosFragment"
+        android:name="com.example.mythic.fragments.personaje.CrearAtributosFragment"
+        android:label="Asignar Rangos de Atributos"
+        tools:layout="@layout/fragment_crear_atributos" >
+        <argument
+            android:name="PJactual"
+            app:argType="com.example.mythic.model.Personaje" />
     </fragment>
 </navigation>
