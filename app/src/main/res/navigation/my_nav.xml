@@ -126,5 +126,9 @@
         android:id="@+id/listaPJFragment"
         android:name="com.example.mythic.fragments.personaje.ListaPJFragment"
         android:label="PJs del Jugador"
-        tools:layout="@layout/fragment_lista_p_j" />
+        tools:layout="@layout/fragment_lista_p_j" >
+        <argument
+            android:name="jugadorActual"
+            app:argType="com.example.mythic.model.Jugador" />
+    </fragment>
 </navigation>
