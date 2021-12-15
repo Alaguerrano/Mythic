@@ -16,8 +16,8 @@ import kotlinx.coroutines.launch
 
 class PJViewModel (application: Application, idJugador: Int) : AndroidViewModel(application) {
 
-    val listaPJSinAventura : LiveData<List<Personaje>>
-
+    val listaPJsSinAventura : LiveData<List<Personaje>>
+    val listaPJsJugador : LiveData<List<Personaje>>
 
 
     private val repository : PJRepository
@@ -26,8 +26,8 @@ class PJViewModel (application: Application, idJugador: Int) : AndroidViewModel(
     init{
         personajeDao = PersonajeBD.obtenerBD(application).personajeDao()
         repository = PJRepository(personajeDao, idJugador)
-        listaPJSinAventura = repository.listaPJSinAventura
-
+        listaPJsSinAventura = repository.listaPJsSinAventura
+        listaPJsJugador = repository.listaPJsJugador
 
     }
 

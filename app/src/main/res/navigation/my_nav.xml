@@ -60,8 +60,8 @@
             android:id="@+id/action_jugadorSeleccionadoFragment_to_listaAventurasFragment"
             app:destination="@id/listaAventurasFragment" />
         <action
-            android:id="@+id/action_jugadorSeleccionadoFragment_to_crearPJFragment"
-            app:destination="@id/crearPJFragment" />
+            android:id="@+id/action_jugadorSeleccionadoFragment_to_listaPJFragment"
+            app:destination="@id/listaPJFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearAventuraFragment"
@@ -109,10 +109,22 @@
         android:id="@+id/crearPJFragment"
         android:name="com.example.mythic.fragments.personaje.CrearPJFragment"
         android:label="Crear PJ"
-        tools:layout="@layout/fragment_crear_pj" />
+        tools:layout="@layout/fragment_crear_pj" >
+        <argument
+            android:name="jugadorActual"
+            app:argType="com.example.mythic.model.Jugador" />
+        <argument
+            android:name="listaPJsJugador"
+            app:argType="com.example.mythic.model.Personaje[]" />
+    </fragment>
     <fragment
         android:id="@+id/actualizarAventuraFragment"
         android:name="com.example.mythic.fragments.aventura.ActualizarAventuraFragment"
         android:label="Editar Aventura"
         tools:layout="@layout/fragment_actualizar_aventura" />
+    <fragment
+        android:id="@+id/listaPJFragment"
+        android:name="com.example.mythic.fragments.personaje.ListaPJFragment"
+        android:label="PJs del Jugador"
+        tools:layout="@layout/fragment_lista_p_j" />
 </navigation>

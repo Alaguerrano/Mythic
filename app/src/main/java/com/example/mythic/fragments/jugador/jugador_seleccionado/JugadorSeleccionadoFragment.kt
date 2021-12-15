@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
+import com.example.mythic.fragments.aventura.lista_aventuras.ListaAventurasAdapter
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.aventuras_bt
 
@@ -59,8 +60,7 @@ class JugadorSeleccionadoFragment : Fragment() {
         }
 
         view.PJs_bt.setOnClickListener{
-            val action = JugadorSeleccionadoFragmentDirections.actionJugadorSeleccionadoFragmentToCrearPJFragment()
-            findNavController().navigate(action)
+
         }
 
 

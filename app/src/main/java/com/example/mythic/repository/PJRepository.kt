@@ -6,7 +6,8 @@ import com.example.mythic.model.Jugador
 import com.example.mythic.model.Personaje
 
 class PJRepository(private val personajeDao: PersonajeDao, idJugador : Int) {
-    val listaPJSinAventura : LiveData<List<Personaje>> = personajeDao.obtenerPJSinAventura(idJugador)
+    val listaPJsSinAventura : LiveData<List<Personaje>> = personajeDao.obtenerPJsSinAventura(idJugador)
+    val listaPJsJugador : LiveData<List<Personaje>> = personajeDao.obtenerPJsJugador(idJugador)
 
 
 
