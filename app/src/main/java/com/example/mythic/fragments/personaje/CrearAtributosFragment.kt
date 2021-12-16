@@ -22,9 +22,24 @@ class CrearAtributosFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_atributos, container, false)
         val rango = Rango()
-        val mSpinner = view.rango_fuerza_sp
+        val mFuerzaSpinner = view.rango_fuerza_sp
+        val mAgilidadSpinner  = view.rango_agilidad_sp
+        val mReflejosSpinner = view.rango_reflejos_sp
+        val mInteligenciaSpinner = view.rango_inteligencia_sp
+        val mIntuicionSpinner = view.rango_intuicion_sp
+        val mFuerzaVoluntadSpinner = view.rango_fuerza_voluntad_sp
+        val mFortalezaSpinner = view.rango_fortaleza_sp
+
         val rangoAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, rango.valor )
-        mSpinner.adapter = rangoAdapter
+
+        mFuerzaSpinner.adapter = rangoAdapter
+        mAgilidadSpinner.adapter = rangoAdapter
+        mReflejosSpinner.adapter = rangoAdapter
+        mInteligenciaSpinner.adapter = rangoAdapter
+        mIntuicionSpinner.adapter = rangoAdapter
+        mFuerzaVoluntadSpinner.adapter = rangoAdapter
+        mFortalezaSpinner.adapter = rangoAdapter
+
         return view
     }
 
