@@ -17,6 +17,7 @@
         android:hint="Nombre del Jugador"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textSize="24sp"
         android:text=""
         android:textAlignment="center"
         android:textColor="#2C2B2B"
@@ -26,37 +27,63 @@
         app:layout_constraintTop_toTopOf="parent"
         android:importantForAutofill="no" />
 
-
-
-    <Switch
-        android:id="@+id/master_humano_sw"
+    <TextView
+        android:id="@+id/tipo_master_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:text="¿Master humano?"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
+        android:text="Tipo Master: "
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_et" />
-
-    <Switch
-        android:id="@+id/multijugador_sw"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/numero_jugadores_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:text="¿Multijugador?"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:text="Número Jugadores:"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/master_humano_sw" />
-
-    <Switch
-        android:id="@+id/motorDistintoMythic_sw"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_master_tv" />
+    <TextView
+        android:id="@+id/motor_juego_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:text="¿Usar otro juego de rol como motor?"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:text="Motor de Juego:"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multijugador_sw" />
+        app:layout_constraintTop_toBottomOf="@+id/numero_jugadores_tv" />
+
+    <Spinner
+        android:id="@+id/tipo_master_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/tipo_master_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/numero_jugadores_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/numero_jugadores_tv"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_master_sp" />
+    <Spinner
+        android:id="@+id/motor_juego_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/motor_juego_tv"
+        app:layout_constraintTop_toBottomOf="@+id/numero_jugadores_sp" />
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -65,5 +92,5 @@
         android:text="Crear Perfil de Jugador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/motorDistintoMythic_sw" />
+        app:layout_constraintTop_toBottomOf="@+id/motor_juego_sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
