@@ -2,22 +2,22 @@ package com.example.mythic.data.atributo
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.mythic.model.Aventura
+import com.example.mythic.model.Atributo
+
 
 @Dao
 interface AtributoDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun crearAventura(aventura: Aventura)
+    fun crearAtributo(atributo: Atributo)
 
     @Update
-    fun actualizarAventura(aventura: Aventura)
+    fun actualizarAtributo(atributo: Atributo)
 
     @Delete
-    fun borrarAventura(aventura: Aventura)
+    fun borrarAtributo(atributo: Atributo)
 
-    @Query("SELECT * FROM aventuras_tabla WHERE idJugador =:idJugador")
-    fun obtenerAventurasJugador(idJugador : Int): LiveData<List<Aventura>>
+    @Query("SELECT * FROM atributos_tabla WHERE idPersonaje =:idPersonaje")
+    fun obtenerAtributosPersonaje(idPersonaje : Int): LiveData<List<Atributo>>
 
-    @Query("DELETE FROM aventuras_tabla WHERE idJugador =:idJugador")
-    fun borrarAventurasJugador(idJugador : Int)
+
 }
