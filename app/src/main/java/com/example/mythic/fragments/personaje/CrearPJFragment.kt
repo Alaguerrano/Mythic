@@ -65,6 +65,8 @@ class CrearPJFragment : Fragment() {
                     //Enviar a atributos de PJ Puntos
                 }else{
                     //Enviar a atributos de PJ libre
+                    val action = CrearPJFragmentDirections.actionCrearPJFragmentToAtributosFragment(pj)
+                    findNavController().navigate(action)
                 }
 
 

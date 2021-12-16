@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Spinner
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythic.R
@@ -13,6 +14,7 @@ import com.example.mythic.model.Jugador
 import kotlinx.android.synthetic.main.fila_lista_jugador.view.*
 
 class ListaJugadoresAdapter: RecyclerView.Adapter<ListaJugadoresAdapter.MiViewHolder>(){
+
 
     private var jugadoresLista = emptyList<Jugador>()
 
