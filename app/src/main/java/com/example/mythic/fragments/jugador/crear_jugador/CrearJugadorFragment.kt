@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -15,9 +16,12 @@ import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
 import com.example.mythic.model.Jugador
+import com.example.mythic.model.Master
+import com.example.mythic.model.Rango
 import com.example.mythic.repository.JugadorRepository
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
+import kotlinx.android.synthetic.main.fragment_crear_atributos.view.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.*
 import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 
@@ -36,6 +40,16 @@ class CrearJugadorFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_crear_jugador, container, false)
 
+        val master = Master()
+        val mTipoMasterSpinner = view.tipo_master_sp
+        val mNumeroJugadores  = view.numero_jugadores_sp
+        val mMotorJuego = view.motor_juego_sp
+
+        val masterAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, master.valor )
+
+       mTipoMasterSpinner.adapter = masterAdapter
+
+
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
 
@@ -52,13 +66,13 @@ class CrearJugadorFragment : Fragment() {
     private fun insertarDatos() {
 
         val nombre = nombre_et.text.toString()
-        val masterHumano = master_humano_sw.isChecked()
-        val multijugador = multijugador_sw.isChecked()
-        val motorDistintoMythic = motorDistintoMythic_sw.isChecked()
+        val tipoMaster = tipo_master_sp.selectedItemPosition
+        val numeroJugadores = numero_jugadores_sp.selectedItemPosition
+        val motorJuego = motor_juego_sp.selectedItemPosition
         if (comprobarCampos(nombre)) {
             if(comprobarNombre(nombre))
             {
-                val jugador = Jugador(0, nombre, masterHumano, multijugador, motorDistintoMythic)
+                val jugador = Jugador(0, nombre,tipoMaster,numeroJugadores, motorJuego)
                 mJugadorViewModel.crearJugador(jugador)
                 Toast.makeText(requireContext(), "Perfil de Jugador creado", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_crearJugadorFragment_to_listaJugadoresFragment)

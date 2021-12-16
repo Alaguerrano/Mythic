@@ -12,8 +12,8 @@ data class Jugador(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val nombre : String,
-    val masterHumano : Boolean,
-    val multijugador : Boolean,
-    val motorDistintoMythic : Boolean,
+    val tipoMaster : Int,
+    val numeroJugadores : Int,
+    val motorJuego: Int
 
 ): Parcelable
