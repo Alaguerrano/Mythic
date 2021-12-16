@@ -15,10 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.jugador.actualizar_jugador.ActualizarJugadorFragmentArgs
-import com.example.mythic.model.Jugador
-import com.example.mythic.model.Master
-import com.example.mythic.model.MotorJuego
-import com.example.mythic.model.Rango
+import com.example.mythic.model.*
 import com.example.mythic.repository.JugadorRepository
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.JugadorViewModel
@@ -42,15 +39,20 @@ class CrearJugadorFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_crear_jugador, container, false)
 
         val master = Master()
+        val numeroJugadores = NumeroJugadores()
         val motorJuego = MotorJuego()
+
         val mTipoMasterSpinner = view.tipo_master_sp
         val mNumeroJugadoresSpinner  = view.numero_jugadores_sp
         val mMotorJuegoSpinner = view.motor_juego_sp
 
         val masterAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, master.valor )
+        val numeroJugadoresAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, numeroJugadores.valor )
         val motorJuegoAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, motorJuego.valor )
-       mTipoMasterSpinner.adapter = masterAdapter
-       mMotorJuegoSpinner.adapter = motorJuegoAdapter
+
+        mTipoMasterSpinner.adapter = masterAdapter
+        mNumeroJugadoresSpinner.adapter = numeroJugadoresAdapter
+        mMotorJuegoSpinner.adapter = motorJuegoAdapter
 
 
 
