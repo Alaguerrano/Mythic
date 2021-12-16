@@ -41,9 +41,9 @@ class ActualizarJugadorFragment : Fragment() {
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
-        view.actualizar_master_humano_sw.setChecked(args.jugadorActual.masterHumano)
-        view.actualizar_multijugador_sw.setChecked(args.jugadorActual.multijugador)
-        view.actualizar_motorDistintoMythic_sw.setChecked(args.jugadorActual.motorDistintoMythic)
+       // view.actualizar_master_humano_sw.setChecked(args.jugadorActual.masterHumano)
+        //view.actualizar_multijugador_sw.setChecked(args.jugadorActual.multijugador)
+        //view.actualizar_motorDistintoMythic_sw.setChecked(args.jugadorActual.motorDistintoMythic)
 
         view.button.setOnClickListener {
             actualizarJugador()
@@ -55,11 +55,11 @@ class ActualizarJugadorFragment : Fragment() {
 
     private fun actualizarJugador(){
         val nombre = actualizar_nombre_et.text.toString()
-        val masterHumano = actualizar_master_humano_sw.isChecked()
-        val multijugador = actualizar_multijugador_sw.isChecked()
-        val motorDistintoMythic = actualizar_motorDistintoMythic_sw.isChecked()
+        //val masterHumano = actualizar_master_humano_sw.isChecked()
+        //val multijugador = actualizar_multijugador_sw.isChecked()
+       // val motorDistintoMythic = actualizar_motorDistintoMythic_sw.isChecked()
         if(comprobarCampos(nombre)){
-            val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,masterHumano, multijugador,motorDistintoMythic)
+            val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,0, 1,0)
             mJugadorViewModel.actualizarJugador(jugadorActualizado)
             Toast.makeText(requireContext(), "Perfil de Jugador actualizado", Toast.LENGTH_LONG).show()
             val action = ActualizarJugadorFragmentDirections.actionActualizarJugadorFragmentToListaJugadoresFragment()
