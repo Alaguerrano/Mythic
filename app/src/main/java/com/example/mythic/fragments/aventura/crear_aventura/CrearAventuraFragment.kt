@@ -37,17 +37,7 @@ class CrearAventuraFragment : Fragment() {
         mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
-        //MOTOR MYTHIC
-        if(args.jugadorActual.motorDistintoMythic == false){
-            //MODO SOLITARIO
-            if(args.jugadorActual.multijugador == false){
 
-            }
-        }
-        //MOTOR DISTINTO DE MYTHIC
-        else{
-
-        }
         view.button.setOnClickListener {
 
             insertarDatos()
