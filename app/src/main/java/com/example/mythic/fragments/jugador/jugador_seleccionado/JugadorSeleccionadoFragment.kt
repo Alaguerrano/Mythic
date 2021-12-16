@@ -31,21 +31,10 @@ class JugadorSeleccionadoFragment : Fragment() {
 
 
         view.nombre_jugador.setText(Html.fromHtml("<b>Nombre del Jugador:</b> " + args.jugadorActual.nombre))
-        if(args.jugadorActual.masterHumano == true){
-            view.tipo_master.setText(Html.fromHtml("<b>Master:</b> Humano"))
-        }else{
-            view.tipo_master.setText(Html.fromHtml("<b>Master:</b> Mythic"))
-        }
-        if(args.jugadorActual.multijugador == true){
-            view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> Multijugador"))
-        }else{
-            view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> Solitario"))
-        }
-        if(args.jugadorActual.motorDistintoMythic == true){
-            view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> Distinto a Mythic"))
-        }else{
-            view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> Mythic"))
-        }
+        view.tipo_master.setText(Html.fromHtml("<b>Master:</b> " + args.jugadorActual.tipoMaster))
+        view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> " + args.jugadorActual.numeroJugadores))
+        view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> " + args.jugadorActual.motorJuego))
+
 
 
         setHasOptionsMenu(true)
