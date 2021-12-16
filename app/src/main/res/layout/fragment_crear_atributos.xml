@@ -89,8 +89,57 @@
         android:id="@+id/rango_fuerza_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/fuerza_tv"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/rango_agilidad_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/agilidad_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_fuerza_sp" />
+
+    <Spinner
+        android:id="@+id/rango_reflejos_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/reflejos_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_agilidad_sp" />
+
+    <Spinner
+        android:id="@+id/rango_inteligencia_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/inteligencia_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_reflejos_sp" />
+
+    <Spinner
+        android:id="@+id/rango_intuicion_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/intuicion_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_inteligencia_sp" />
+
+    <Spinner
+        android:id="@+id/rango_fuerza_voluntad_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/fuerza_voluntad_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_intuicion_sp" />
+
+    <Spinner
+        android:id="@+id/rango_fortaleza_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/fortaleza_tv"
+        app:layout_constraintTop_toBottomOf="@+id/rango_fuerza_voluntad_sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
