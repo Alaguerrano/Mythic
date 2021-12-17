@@ -121,7 +121,10 @@ class ActualizarJugadorFragment : Fragment() {
             //Borrar Aventuras de Personajes
             mAventuraViewModel.borrarAventurasJugador()
 
-            //Borrar Personajes de Jugador
+            //TODO Borrar Personajes de Jugador
+            //TODO Borrar Atributos de los Personajes de Jugador
+            //TODO Borrar Habilidades de los Personajes de Jugador
+            //TODO Borrar Notas de los Personajes de Jugador
 
 
 
