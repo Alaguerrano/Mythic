@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -12,11 +13,19 @@ import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.aventura.lista_aventuras.ListaAventurasAdapter
 import com.example.mythic.model.Jugador
+import com.example.mythic.model.Master
+import com.example.mythic.model.MotorJuego
+import com.example.mythic.model.NumeroJugadores
 import com.example.mythic.viewmodel.AventuraViewModel
 import com.example.mythic.viewmodel.AventuraViewModelFactory
 import com.example.mythic.viewmodel.JugadorViewModel
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
+import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.button
+import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.motor_juego_sp
+import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.numero_jugadores_sp
+import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.tipo_master_sp
+import kotlinx.android.synthetic.main.fragment_crear_jugador.view.*
 
 
 class ActualizarJugadorFragment : Fragment() {
@@ -34,6 +43,21 @@ class ActualizarJugadorFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_actualizar_jugador, container, false)
 
+        val master = Master()
+        val numeroJugadores = NumeroJugadores()
+        val motorJuego = MotorJuego()
+
+        val mTipoMasterSpinner = view.tipo_master_sp
+        val mNumeroJugadoresSpinner  = view.numero_jugadores_sp
+        val mMotorJuegoSpinner = view.motor_juego_sp
+
+        val masterAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, master.valor )
+        val numeroJugadoresAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, numeroJugadores.valor )
+        val motorJuegoAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, motorJuego.valor )
+
+        mTipoMasterSpinner.adapter = masterAdapter
+        mNumeroJugadoresSpinner.adapter = numeroJugadoresAdapter
+        mMotorJuegoSpinner.adapter = motorJuegoAdapter
 
         mJugadorViewModel = ViewModelProvider(this).get(JugadorViewModel::class.java)
 
@@ -41,9 +65,10 @@ class ActualizarJugadorFragment : Fragment() {
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
-       // view.actualizar_master_humano_sw.setChecked(args.jugadorActual.masterHumano)
-        //view.actualizar_multijugador_sw.setChecked(args.jugadorActual.multijugador)
-        //view.actualizar_motorDistintoMythic_sw.setChecked(args.jugadorActual.motorDistintoMythic)
+        view.tipo_master_sp.setSelection(args.jugadorActual.tipoMaster)
+        view.numero_jugadores_sp.setSelection(args.jugadorActual.numeroJugadores)
+        view.motor_juego_sp.setSelection(args.jugadorActual.motorJuego)
+
 
         view.button.setOnClickListener {
             actualizarJugador()
@@ -55,11 +80,11 @@ class ActualizarJugadorFragment : Fragment() {
 
     private fun actualizarJugador(){
         val nombre = actualizar_nombre_et.text.toString()
-        //val masterHumano = actualizar_master_humano_sw.isChecked()
-        //val multijugador = actualizar_multijugador_sw.isChecked()
-       // val motorDistintoMythic = actualizar_motorDistintoMythic_sw.isChecked()
+        val tipoMaster = tipo_master_sp.selectedItemPosition
+        val numeroJugadores = numero_jugadores_sp.selectedItemPosition + 1
+        val motorJuego = motor_juego_sp.selectedItemPosition
         if(comprobarCampos(nombre)){
-            val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,0, 1,0)
+            val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,tipoMaster, numeroJugadores,motorJuego)
             mJugadorViewModel.actualizarJugador(jugadorActualizado)
             Toast.makeText(requireContext(), "Perfil de Jugador actualizado", Toast.LENGTH_LONG).show()
             val action = ActualizarJugadorFragmentDirections.actionActualizarJugadorFragmentToListaJugadoresFragment()
