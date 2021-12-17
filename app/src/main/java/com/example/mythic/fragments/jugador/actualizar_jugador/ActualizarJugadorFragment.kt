@@ -81,7 +81,7 @@ class ActualizarJugadorFragment : Fragment() {
     private fun actualizarJugador(){
         val nombre = actualizar_nombre_et.text.toString()
         val tipoMaster = tipo_master_sp.selectedItemPosition
-        val numeroJugadores = numero_jugadores_sp.selectedItemPosition + 1
+        val numeroJugadores = numero_jugadores_sp.selectedItemPosition
         val motorJuego = motor_juego_sp.selectedItemPosition
         if(comprobarCampos(nombre)){
             val jugadorActualizado = Jugador(args.jugadorActual.id,nombre,tipoMaster, numeroJugadores,motorJuego)
@@ -118,8 +118,16 @@ class ActualizarJugadorFragment : Fragment() {
             mJugadorViewModel.borrarJugador(args.jugadorActual)
             val listaAventurasAdapter = ListaAventurasAdapter(args.jugadorActual.id)
 
+            //Borrar Aventuras de Personajes
             mAventuraViewModel.borrarAventurasJugador()
+
+            //Borrar Personajes de Jugador
+
+
+
             Toast.makeText(requireContext(), "Perfil de Jugador borrado: ${args.jugadorActual.nombre}", Toast.LENGTH_LONG).show()
+
+
             findNavController().navigate(R.id.action_actualizarJugadorFragment_to_listaJugadoresFragment)
 
         }
