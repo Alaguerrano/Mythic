@@ -8,6 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mythic.R
 import com.example.mythic.fragments.aventura.lista_aventuras.ListaAventurasAdapter
+import com.example.mythic.model.Master
+import com.example.mythic.model.MotorJuego
+import com.example.mythic.model.NumeroJugadores
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.*
 import kotlinx.android.synthetic.main.fragment_jugador_seleccionado.view.aventuras_bt
 
@@ -31,9 +34,9 @@ class JugadorSeleccionadoFragment : Fragment() {
 
 
         view.nombre_jugador.setText(Html.fromHtml("<b>Nombre del Jugador:</b> " + args.jugadorActual.nombre))
-        view.tipo_master.setText(Html.fromHtml("<b>Master:</b> " + args.jugadorActual.tipoMaster))
-        view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> " + args.jugadorActual.numeroJugadores))
-        view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> " + args.jugadorActual.motorJuego))
+        view.tipo_master.setText(Html.fromHtml("<b>Master:</b> " + Master().valor[args.jugadorActual.tipoMaster]    ))
+        view.numero_jugadores.setText(Html.fromHtml("<b>Número jugadores:</b> " + NumeroJugadores().valor[args.jugadorActual.numeroJugadores]))
+        view.motor_juego.setText(Html.fromHtml("<b>Motor de juego:</b> " + MotorJuego().valor[args.jugadorActual.motorJuego]))
 
 
 

@@ -33,13 +33,25 @@ class CrearAtributosFragment : Fragment() {
         val rangoAdapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, rango.valor )
 
         mFuerzaSpinner.adapter = rangoAdapter
+        mFuerzaSpinner.setSelection(5)
 
         mAgilidadSpinner.adapter = rangoAdapter
+        mAgilidadSpinner.setSelection(5)
+
         mReflejosSpinner.adapter = rangoAdapter
+        mReflejosSpinner.setSelection(5)
+
         mInteligenciaSpinner.adapter = rangoAdapter
+        mInteligenciaSpinner.setSelection(5)
+
         mIntuicionSpinner.adapter = rangoAdapter
+        mIntuicionSpinner.setSelection(5)
+
         mFuerzaVoluntadSpinner.adapter = rangoAdapter
+        mIntuicionSpinner.setSelection(5)
+
         mFortalezaSpinner.adapter = rangoAdapter
+        mFortalezaSpinner.setSelection(5)
 
         return view
     }
