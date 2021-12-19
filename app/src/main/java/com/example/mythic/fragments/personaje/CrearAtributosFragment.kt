@@ -48,7 +48,7 @@ class CrearAtributosFragment : Fragment() {
         mIntuicionSpinner.setSelection(5)
 
         mFuerzaVoluntadSpinner.adapter = rangoAdapter
-        mIntuicionSpinner.setSelection(5)
+        mFuerzaVoluntadSpinner.setSelection(5)
 
         mFortalezaSpinner.adapter = rangoAdapter
         mFortalezaSpinner.setSelection(5)
