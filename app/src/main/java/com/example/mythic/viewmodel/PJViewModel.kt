@@ -18,6 +18,7 @@ class PJViewModel (application: Application, idJugador: Int) : AndroidViewModel(
 
     val listaPJsSinAventura : LiveData<List<Personaje>>
     val listaPJsJugador : LiveData<List<Personaje>>
+    val id = idJugador
 
 
     private val repository : PJRepository
@@ -49,9 +50,9 @@ class PJViewModel (application: Application, idJugador: Int) : AndroidViewModel(
         }
     }
 
-    fun borrarPJs (idJugador: Int){
+    fun borrarPJsJUgador (){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.borrarPJs(idJugador)
+            repository.borrarPJs(id)
         }
     }
 

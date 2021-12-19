@@ -16,9 +16,7 @@ import com.example.mythic.model.Jugador
 import com.example.mythic.model.Master
 import com.example.mythic.model.MotorJuego
 import com.example.mythic.model.NumeroJugadores
-import com.example.mythic.viewmodel.AventuraViewModel
-import com.example.mythic.viewmodel.AventuraViewModelFactory
-import com.example.mythic.viewmodel.JugadorViewModel
+import com.example.mythic.viewmodel.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.*
 import kotlinx.android.synthetic.main.fragment_actualizar_jugador.view.button
@@ -33,6 +31,8 @@ class ActualizarJugadorFragment : Fragment() {
     private lateinit var mJugadorViewModel: JugadorViewModel
     private lateinit var mAventuraViewModel: AventuraViewModel
     private lateinit var mAventuraViewModelFactory: AventuraViewModelFactory
+    private lateinit var mPJViewModel: PJViewModel
+    private lateinit var mPJViewModelFactory: PJViewModelFactory
 
     private val args by navArgs<ActualizarJugadorFragmentArgs>()
 
@@ -63,6 +63,10 @@ class ActualizarJugadorFragment : Fragment() {
 
         mAventuraViewModelFactory = AventuraViewModelFactory(activity?.application!!, args.jugadorActual.id)
         mAventuraViewModel = ViewModelProvider(this,mAventuraViewModelFactory).get(AventuraViewModel::class.java)
+        mPJViewModelFactory = PJViewModelFactory(activity?.application!!, args.jugadorActual.id)
+        mPJViewModel = ViewModelProvider(this,mPJViewModelFactory).get(PJViewModel::class.java)
+
+
 
         view.actualizar_nombre_et.setText(args.jugadorActual.nombre)
         view.tipo_master_sp.setSelection(args.jugadorActual.tipoMaster)
@@ -122,6 +126,7 @@ class ActualizarJugadorFragment : Fragment() {
             mAventuraViewModel.borrarAventurasJugador()
 
             //TODO Borrar Personajes de Jugador
+            mPJViewModel.
             //TODO Borrar Atributos de los Personajes de Jugador
             //TODO Borrar Habilidades de los Personajes de Jugador
             //TODO Borrar Notas de los Personajes de Jugador
